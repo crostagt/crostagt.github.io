@@ -9,14 +9,22 @@
 <meta property="og:type" content="restaurant">
 <meta property="og:title" content="Crosta — Lo nuestro es fuego con libertad">
 <meta property="og:description" content="Pizza neonapolitana en Ciudad de Guatemala.">
-<meta property="og:image" content="img/og.jpg">
 <meta property="og:locale" content="es_GT">
+<meta property="og:url" content="https://crostagt.com/">
+<meta property="og:image" content="https://crostagt.com/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://crostagt.com/">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/cy-grotesk-wide-bold.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="fonts/neue-regrade.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" as="image" href="img/estirado-1600.webp" imagesrcset="img/estirado-800.webp 800w, img/estirado-1600.webp 1600w" imagesizes="(min-width: 900px) 45vw, 100vw">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Restaurant","name":"Crosta","servesCuisine":["Pizza","Pizza neonapolitana"],"slogan":"Lo nuestro es fuego con libertad","address":{"@type":"PostalAddress","addressLocality":"Ciudad de Guatemala","addressCountry":"GT"},"sameAs":["https://www.instagram.com/crostagt/"]}
+{"@context":"https://schema.org","@type":"Restaurant","@id":"https://crostagt.com/#restaurante","name":"Crosta","url":"https://crostagt.com/","image":"https://crostagt.com/img/og.jpg","logo":"https://crostagt.com/img/favicon.svg","servesCuisine":["Pizza","Pizza neonapolitana"],"slogan":"Lo nuestro es fuego con libertad","acceptsReservations":false,"address":{"@type":"PostalAddress","addressLocality":"Ciudad de Guatemala","addressCountry":"GT"},"sameAs":["https://www.instagram.com/crostagt/"],
+"hasMenu":{"@type":"Menu","name":"Menú Crosta","hasMenuSection":{"@type":"MenuSection","name":"Pizzas","hasMenuItem":[
+{"@type":"MenuItem","name":"Pizza Tomate y albahaca","url":"https://crostagt.com/pizza/tomate-y-albahaca/"},
+{"@type":"MenuItem","name":"Pizza Blanca con jamón curado","url":"https://crostagt.com/pizza/blanca-con-jamon-curado/"},
+{"@type":"MenuItem","name":"Pizza Salami y alcaparras","url":"https://crostagt.com/pizza/salami-y-alcaparras/"},
+{"@type":"MenuItem","name":"Pizza Aceitunas verdes","url":"https://crostagt.com/pizza/aceitunas-verdes/"}]}}}
 </script>
 <style>
 /* ============ Tipografías de marca (brand book) ============ */
@@ -166,7 +174,7 @@ p{margin:0 0 1em}
 .value{display:grid;grid-template-columns:minmax(150px,.8fr) 1.6fr;gap:12px 28px;padding-block:clamp(22px,3vw,40px);border-bottom:1px solid var(--coffee)}
 .value dt{font-family:var(--display);font-stretch:125%;font-weight:800;font-size:clamp(1.05rem,1.4vw,1.35rem);line-height:1.05}
 .value dd{margin:0;max-width:52ch}
-.philo-quote{grid-column:7 / -1;display:flex;gap:24px;align-items:center;margin-top:clamp(32px,4vw,56px)}
+.philo-quote{grid-column:7 / -1;display:flex;gap:24px;align-items:center;align-self:center}
 .philo-quote .m{width:120px;height:120px;flex:none;color:var(--coffee);--ml:var(--dough)}
 .philo-quote p{font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:clamp(1.2rem,2vw,1.8rem);line-height:1;margin:0;max-width:16ch}
 @media (max-width:860px){
@@ -224,6 +232,7 @@ p{margin:0 0 1em}
 .stage-info h4{font-size:.95rem;margin:1.4em 0 .6em;font-weight:700}
 .ing{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 .ing li{padding:.32em .9em;border-radius:999px;background:var(--dough);font-size:.9rem}
+.stage-link{display:inline-block;margin-top:12px;font-weight:700;text-underline-offset:4px}
 .stage-note{font-size:.86rem;margin-top:14px;max-width:46ch;opacity:.85}
 .buy{margin-top:26px;padding-top:22px;border-top:2px solid var(--coffee);display:flex;flex-wrap:wrap;align-items:center;gap:14px}
 .price{font-weight:600;flex-basis:100%;display:flex;justify-content:space-between;align-items:baseline;margin:0}
@@ -289,42 +298,6 @@ p{margin:0 0 1em}
   .process.is-static .p-intro,.process.is-static .step,.process.is-static .p-end{width:100%}
   .process.is-static .p-intro{padding-bottom:12px}
 }
-
-/* ============ Galería ============ */
-.gallery{background:var(--dough);padding-block:clamp(72px,10vw,140px)}
-.gallery-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px;margin-bottom:clamp(32px,5vw,64px)}
-.gallery-head p{max-width:34ch;margin:0}
-.g-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(70px,7.2vw,118px);gap:clamp(8px,1.2vw,18px)}
-.g-item{position:relative;overflow:hidden;border:0;padding:0;background:var(--coffee);display:block}
-.g-item img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease),filter .5s}
-.g-item:hover img{transform:scale(1.05)}
-.g-item::after{content:"Ampliar";position:absolute;left:12px;bottom:12px;padding:.25em .75em;border-radius:999px;background:var(--paper);font-size:.82rem;font-weight:600;opacity:0;transform:translateY(6px);transition:.3s var(--ease)}
-.g-item:hover::after,.g-item:focus-visible::after{opacity:1;transform:none}
-.g1{grid-column:1/span 7;grid-row:span 4}.g2{grid-column:8/span 5;grid-row:span 6}
-.g3{grid-column:1/span 3;grid-row:span 4}.g4{grid-column:4/span 4;grid-row:span 4}
-.g5{grid-column:1/span 4;grid-row:span 5}.g6{grid-column:5/span 4;grid-row:span 5}.g7{grid-column:9/span 4;grid-row:span 5}
-.g8{grid-column:1/span 8;grid-row:span 5}.g9{grid-column:9/span 4;grid-row:span 5}
-.g10{grid-column:1/span 4;grid-row:span 5}.g11{grid-column:5/span 4;grid-row:span 5}.g12{grid-column:9/span 4;grid-row:span 5}
-.g13{grid-column:1/span 4;grid-row:span 5}.g14{grid-column:5/span 8;grid-row:span 5}
-.g15{grid-column:1/span 4;grid-row:span 5}.g16{grid-column:5/span 4;grid-row:span 5}.g17{grid-column:9/span 4;grid-row:span 5}
-.g18{grid-column:1/span 8;grid-row:span 5}.g19{grid-column:9/span 4;grid-row:span 5}
-.g20{grid-column:1/-1;grid-row:span 4}.g20 img{object-position:50% 62%}
-@media (max-width:760px){
-  .g-grid{grid-template-columns:repeat(6,1fr);grid-auto-rows:64px}
-  .g-item{grid-column:span 3!important;grid-row:span 4!important}
-  .g1,.g8,.g14,.g18,.g20{grid-column:1/-1!important;grid-row:span 3!important}
-}
-.lightbox{border:0;padding:0;max-width:none;max-height:none;width:100vw;height:100vh;height:100dvh;background:rgba(38,28,22,.97);color:var(--dough);margin:0}
-.lightbox::backdrop{background:rgba(38,28,22,.9)}
-.lb-inner{position:absolute;inset:0;display:grid;grid-template-rows:auto 1fr auto;padding:14px var(--pad) 18px}
-.lb-top{display:flex;justify-content:space-between;align-items:center;min-height:52px}
-.lb-stage{position:relative;display:grid;place-items:center;min-height:0;touch-action:pan-y}
-.lb-stage img{max-width:100%;max-height:100%;object-fit:contain;width:auto;height:auto}
-.lb-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:12px}
-.lb-btn{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--dough);background:none;color:var(--dough);display:grid;place-items:center}
-.lb-btn:hover{background:var(--dough);color:var(--coffee)}
-.lb-btn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2}
-.lb-cap{margin:0;text-align:center;flex:1;font-size:.95rem}
 
 /* ============ Pedidos ============ */
 .order{background:var(--red);color:var(--coffee);padding-block:clamp(72px,10vw,140px)}
@@ -469,7 +442,8 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
 .rig .spark{transform-box:fill-box;transform-origin:50% 50%;opacity:0;fill:var(--fx,#FF4027)}
 .walker-el{position:absolute;inset:0;will-change:transform}
 .walker-el .rig{position:absolute;inset:0}
-.walker-el .fb{visibility:hidden}
+.walker-el{transform-origin:50% 100%}
+.rig.walking .lid{animation:blink 4.8s infinite var(--bd,0s)}
 @media all{
   .rig .lid{animation:blink var(--bk,5.2s) infinite var(--bd,0s)}
   .rig .rr{animation:breathe 3.6s ease-in-out infinite}
@@ -513,6 +487,92 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
 @keyframes bite2{0%,44%{transform:scale(0)}46%,96%{transform:scale(1)}100%{transform:scale(0)}}
 @keyframes bite3{0%,74%{transform:scale(0)}76%,96%{transform:scale(1)}100%{transform:scale(0)}}
 
+
+/* ============ Canasta, moto de delivery y confirmación ============ */
+.moto{width:30px;height:20px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.btn-order{gap:.5em}
+.btn-order .moto{width:26px;height:18px}
+.btn-order .count{background:var(--coffee);color:var(--red)}
+.basket-fab{position:fixed;left:clamp(10px,2vw,24px);bottom:clamp(10px,2vw,22px);z-index:96;display:flex;align-items:center;gap:12px;padding:8px 18px 8px 8px;border-radius:999px;border:2px solid var(--coffee);background:var(--red);color:var(--coffee);box-shadow:0 6px 0 var(--coffee);transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.basket-fab:hover{transform:translateY(-2px)}
+.basket-fab:active{transform:translateY(4px);box-shadow:0 2px 0 var(--coffee)}
+.bf-ico{position:relative;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--coffee);color:var(--red)}
+.bf-ico .moto{width:34px;height:24px}
+.bf-count{position:absolute;top:-6px;right:-8px;min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:var(--dough);color:var(--coffee);font-weight:800;font-size:.85rem;display:grid;place-items:center;box-shadow:0 0 0 2px var(--coffee)}
+.bf-txt{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+.bf-txt b{font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:.95rem}
+.bf-txt small{font-size:.82rem;font-weight:600}
+.basket-fab.has .bf-txt small{text-decoration:underline;text-underline-offset:3px}
+.basket-fab.bump{animation:bump .55s cubic-bezier(.3,1.6,.5,1)}
+.basket-fab.bump .moto{animation:ride .55s ease-out}
+@keyframes bump{0%{transform:scale(1)}35%{transform:scale(1.14)}100%{transform:scale(1)}}
+@keyframes ride{0%{transform:translateX(0)}40%{transform:translateX(6px)}100%{transform:translateX(0)}}
+@media (max-width:640px){.basket-fab{padding:6px 14px 6px 6px}.bf-ico{width:46px;height:46px}.bf-txt b{font-size:.85rem}.bf-txt small{font-size:.76rem}}
+.fly{position:fixed;z-index:120;border-radius:50%;pointer-events:none;object-fit:contain;filter:drop-shadow(0 8px 10px rgba(0,0,0,.3))}
+.toast{position:fixed;left:50%;bottom:96px;z-index:130;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--coffee);color:var(--dough);padding:12px 16px 12px 18px;border-radius:999px;display:flex;align-items:center;gap:14px;font-weight:600;box-shadow:0 0 0 2px var(--red);transition:.35s var(--ease);max-width:calc(100vw - 24px)}
+.toast.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+@media (max-width:640px){.toast{top:calc(var(--header-h) + 10px);bottom:auto;transform:translate(-50%,-20px);font-size:.9rem;gap:10px;padding:8px 8px 8px 14px}.toast span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:52vw}}
+.toast button{border:0;border-radius:999px;background:var(--red);color:var(--coffee);font-weight:800;padding:.45em 1em;white-space:nowrap}
+/* cajón de la canasta */
+.drawer{position:fixed;inset:0;z-index:140}
+.drawer[hidden]{display:none}
+.drawer-bg{position:absolute;inset:0;background:rgba(38,28,22,.55);animation:fadeIn .25s both}
+.drawer-panel{position:absolute;top:0;right:0;bottom:0;width:min(440px,100vw);background:var(--paper);color:var(--coffee);display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(0,0,0,.25);animation:slideIn .35s var(--ease) both}
+@media (max-width:640px){.drawer-panel{top:auto;left:0;width:100%;max-height:86vh;max-height:86dvh;border-radius:22px 22px 0 0;animation-name:slideUp}}
+@keyframes fadeIn{from{opacity:0}}
+@keyframes slideIn{from{transform:translateX(100%)}}
+@keyframes slideUp{from{transform:translateY(100%)}}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:2px solid var(--coffee)}
+.drawer-head h2{margin:0;display:flex;align-items:center;gap:10px;font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:1.4rem}
+.basket-ico svg{width:30px;height:26px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round;display:block}
+.drawer-x{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--coffee);background:none;font-size:1.6rem;line-height:1}
+.drawer-body{flex:1;overflow:auto;padding:6px 20px}
+.dr-empty{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;padding:30px 10px}
+.dr-empty .m{width:120px;height:120px;color:var(--coffee);--ml:var(--dough)}
+.dr-empty[hidden],.drawer-foot[hidden]{display:none}
+.drawer-foot{padding:16px 20px calc(16px + env(safe-area-inset-bottom));border-top:2px solid var(--coffee);display:grid;gap:10px}
+.dr-total{display:flex;justify-content:space-between;align-items:baseline;margin:0;font-weight:700}
+.dr-total em{font-style:normal;font-weight:500;font-size:.85rem;opacity:.75}
+.dr-more{text-align:center;font-weight:600}
+.btn-send{justify-content:center;width:100%;min-height:56px;font-size:1.05rem;font-weight:800;background:#1F8F4E;border-color:#1F8F4E;color:#fff}
+.btn-send:hover{background:#17733E;border-color:#17733E}
+.btn-send .wa{width:22px;height:22px;fill:currentColor}
+.btn-send[aria-busy="true"]{opacity:.7;pointer-events:none}
+/* lista de la canasta (cajón y formulario) */
+.cart-items{list-style:none;margin:0;padding:0}
+.cart-items li{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(38,28,22,.2)}
+.cart-items img{width:56px;height:56px;object-fit:contain}
+.cart-items .nm{font-weight:800;line-height:1.15}
+.cart-items .pr{font-size:.82rem;opacity:.7}
+.cart-items .rm{border:0;background:none;padding:0;font-size:.82rem;text-decoration:underline;color:inherit;opacity:.75;margin-top:2px}
+.cart-items .stepper{height:40px}
+.cart-items .stepper button{width:36px}
+/* cómo pedir */
+.how{list-style:none;counter-reset:how;margin:24px 0 0;padding:0;border-top:2px solid var(--coffee)}
+.how li{counter-increment:how;display:grid;grid-template-columns:44px 1fr;gap:4px 12px;padding:14px 0;border-bottom:1px solid var(--coffee)}
+.how li::before{content:counter(how);grid-row:span 2;width:36px;height:36px;border-radius:50%;background:var(--coffee);color:var(--red);display:grid;place-items:center;font-family:var(--display);font-weight:800}
+.how b{font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase}
+.cart h3 .cart-ico{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--red);color:var(--coffee);margin-right:10px;vertical-align:middle}
+.cart h3{align-items:center}
+/* confirmación */
+.done{position:fixed;inset:0;z-index:150;display:grid;place-items:center;padding:18px;background:rgba(38,28,22,.7)}
+.done[hidden]{display:none}
+.done-card{width:min(440px,100%);background:var(--paper);color:var(--coffee);border-radius:24px;padding:26px 24px;text-align:center;box-shadow:0 0 0 3px var(--red);animation:pop .5s cubic-bezier(.3,1.5,.5,1) both}
+@keyframes pop{from{transform:scale(.85);opacity:0}}
+.done-card .m{display:block;width:130px;height:130px;margin:0 auto 6px;color:var(--red);--ml:var(--coffee)}
+.done-card h2{font-size:clamp(1.8rem,7vw,2.4rem);margin-bottom:.3em}
+.done-id{margin:0 0 10px}
+.done-list{list-style:none;margin:0 0 12px;padding:10px 0;border-block:1px solid rgba(38,28,22,.25);text-align:left}
+.done-list li{display:flex;justify-content:space-between;padding:3px 0}
+.done-card .btn{margin-top:8px}
+/* menú: agregar rápido */
+.menu-list li{display:flex;flex-direction:column;gap:8px}
+.quick-add{align-self:center;display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:.35em 1em;border-radius:999px;border:2px solid var(--coffee);background:var(--dough);font-weight:800;font-size:.9rem}
+.quick-add:hover{background:var(--coffee);color:var(--dough)}
+#add-btn{min-height:56px;font-size:1.05rem;padding-inline:1.6em}
+#add-btn .plus{font-size:1.3em;line-height:0}
+@media (max-width:980px){.quick-add{font-size:.82rem;min-height:36px}}
+
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
 </style>
 </head>
@@ -527,11 +587,11 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
       <li><a href="#filosofia">Filosofía</a></li>
       <li><a href="#menu">Menú</a></li>
       <li><a href="#proceso">Proceso</a></li>
-      <li><a href="#galeria">Galería</a></li>
+      
       <li><a href="#visitanos">Visítanos</a></li>
     </ul>
   </nav>
-  <a href="#pedidos" class="btn btn-order">Pedir <span class="count" data-count hidden>0</span></a>
+  <button type="button" class="btn btn-order" data-open-basket aria-label="Abrir tu pedido"><svg class="moto" viewBox="0 0 48 32" aria-hidden="true"><rect x="2" y="7" width="14" height="11" rx="2"/><path d="M6 12h6"/><circle cx="10" cy="25" r="5"/><circle cx="38" cy="25" r="5"/><path d="M15 25h13l6-10h-5"/><path d="M29 15l-3-8h-5"/><path d="M34 15l4 10"/><path d="M8 18v2h10"/></svg><span class="bo-txt">Tu pedido</span> <span class="count" data-count hidden>0</span></button>
   <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir navegación"><span></span><span></span></button>
 </header>
 
@@ -541,7 +601,7 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
     <li><a href="#filosofia">Filosofía</a></li>
     <li><a href="#menu">Menú</a></li>
     <li><a href="#proceso">Proceso</a></li>
-    <li><a href="#galeria">Galería</a></li>
+    
     <li><a href="#pedidos">Pedidos</a></li>
     <li><a href="#visitanos">Visítanos</a></li>
   </ul>
@@ -592,21 +652,14 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
   <div class="wrap philo-head">
     <h2 class="display" id="t-filo">Aquí la masa manda</h2>
     <div class="philo-statement">
-      <p>En Crosta trabajamos con fuego y con libertad. La tradición nos inspira, no nos encierra. Aquí la masa manda: se respeta, se toca, se escucha, se deja vivir.</p>
-      <p>Lo demás —las reglas, las poses, lo innecesario— se queda afuera. Somos calor de horno y alma libre. Una pizza honesta, directa, hecha para disfrutarse sin complicarse.</p>
-      <p class="sign">Así somos. Así sabe Crosta.</p>
+      <p>Fuego y libertad. La tradición nos inspira, no nos encierra: aquí la masa se respeta, se toca y se deja vivir.</p>
+      <p class="sign">Así sabe Crosta.</p>
     </div>
   </div>
   <div class="wrap philo-body">
     <figure class="philo-photo">
       <img src="img/harina-800.webp" srcset="img/harina-800.webp 800w, img/harina-1600.webp 1600w" sizes="(min-width: 860px) 40vw, 100vw" width="609" height="800" loading="lazy" alt="Manos tatuadas sacuden la harina sobre un bollo de masa; el polvo queda suspendido en la luz.">
     </figure>
-    <dl class="values">
-      <div class="value"><dt>Honest craft</dt><dd>Creemos en el arte de hacer las cosas bien, sin atajos. Desde la fermentación hasta el último detalle del emplatado, cada paso tiene intención y respeto por el proceso. No buscamos perfección, sino verdad en lo que hacemos.</dd></div>
-      <div class="value"><dt>Urban warmth</dt><dd>Un refugio en la ciudad. Un espacio que mezcla lo contemporáneo con lo acogedor, donde diseño, música y comida crean una experiencia sin pretensiones pero con carácter.</dd></div>
-      <div class="value"><dt>Perfect mix</dt><dd>Inspiración italiana, corazón guatemalteco. Integramos técnicas y sabores de allá con ingredientes, talento y energía de aquí, porque lo local también puede ser extraordinario.</dd></div>
-      <div class="value"><dt>Quiet confidence</dt><dd>Nuestra identidad se construye desde la coherencia y el detalle: en el sabor, en el ambiente, en la manera en que tratamos a quienes cruzan la puerta. No necesitamos gritar para ser escuchados.</dd></div>
-    </dl>
     <div class="philo-quote">
       <span class="m rig-slot" data-rig="m-cross" aria-hidden="true"></span>
       <p>No necesitamos gritar para ser escuchados</p>
@@ -643,6 +696,7 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
         <h4>Ingredientes que se ven en la foto</h4>
         <ul class="ing" id="stage-ing"></ul>
         <p class="stage-note" id="stage-note"></p>
+          <a class="stage-link" id="stage-link" href="#">Ver la ficha completa de esta pizza</a>
         <div class="buy">
           <p class="price"><span>Precio</span><span><b aria-hidden="true">Q—</b><em>por confirmar</em></span></p>
           <div class="stepper" aria-label="Cantidad">
@@ -650,7 +704,7 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
             <output id="q-val" aria-live="polite">1</output>
             <button type="button" id="q-plus" aria-label="Una más">+</button>
           </div>
-          <button class="btn btn-coffee" id="add-btn" type="button">Agregar al pedido</button>
+          <button class="btn btn-coffee" id="add-btn" type="button"><span class="plus" aria-hidden="true">+</span> Agregar al pedido</button>
           <p class="added" id="added" role="status"></p>
         </div>
       </div>
@@ -696,9 +750,7 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
           <figcaption><span class="step-n">06</span><h3>La mozzarella</h3><p>Se desgarra a mano, en trozos irregulares, para que se funda a su manera.</p></figcaption></figure>
         <figure class="step"><div class="step-img"><img src="img/sazon-bn-800.webp" width="610" height="800" loading="lazy" alt="Fotografía en blanco y negro: una mano espolvorea pimienta sobre la pizza cruda."></div>
           <figcaption><span class="step-n">07</span><h3>El toque final</h3><p>Pimienta y lo que pida la receta, justo antes de entrar al horno.</p></figcaption></figure>
-        <figure class="step"><div class="step-img photo-slot" role="img" aria-label="Espacio para la foto del horno Ooni a gas, pendiente">
-            <span class="rig-slot ph-rig" data-rig="m-pizza" aria-hidden="true"></span>
-            <p><b>Foto del horno Ooni a gas</b><span>Pendiente: envíanos una foto de su horno</span></p></div>
+        <figure class="step"><div class="step-img"><img src="img/horno-ooni-800.webp" width="800" height="770" loading="lazy" alt="Pizza recién horneada sale del horno Ooni a gas sobre una pala metálica, con las llamas al fondo."></div>
           <figcaption><span class="step-n">08</span><h3>El horno</h3><p>Al horno Ooni, a gas. El borde se infla y se mancha; la base queda firme.</p></figcaption></figure>
         <figure class="step"><div class="step-img"><img src="img/cornicione-miga-800.webp" width="585" height="800" loading="lazy" alt="Corte de un borde de pizza: miga abierta con alveolos grandes y costra tostada."></div>
           <figcaption><span class="step-n">09</span><h3>El resultado</h3><p>Un borde alto, aireado por dentro y tostado por fuera.</p></figcaption></figure>
@@ -713,82 +765,58 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
   </div>
 </section>
 
-<!-- ============ GALERÍA ============ -->
-<section class="gallery" id="galeria" data-tone="light" data-pose="m-smoke" data-say="Mira ese borde." aria-labelledby="t-gal">
-  <div class="wrap">
-    <div class="gallery-head">
-      <h2 class="display" id="t-gal">Galería</h2>
-      <p>Producción, detalles y pizzas terminadas. Toca cualquier foto para verla completa.</p>
-    </div>
-    <div class="g-grid" id="g-grid"></div>
-  </div>
-</section>
-
-<dialog class="lightbox" id="lightbox" aria-label="Galería ampliada">
-  <div class="lb-inner">
-    <div class="lb-top"><span id="lb-count"></span><button class="lb-btn" id="lb-close" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-    <div class="lb-stage" id="lb-stage"><img id="lb-img" alt=""></div>
-    <div class="lb-bottom">
-      <button class="lb-btn" id="lb-prev" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
-      <p class="lb-cap" id="lb-cap"></p>
-      <button class="lb-btn" id="lb-next" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
-    </div>
-  </div>
-</dialog>
-
 <!-- ============ PEDIDOS ============ -->
 <section class="order tone-red" id="pedidos" data-tone="red" data-pose="m-wine" data-say="Voy por la mía." aria-labelledby="t-ped">
   <div class="wrap order-grid">
     <div class="order-intro">
       <h2 class="display" id="t-ped">Haz tu pedido</h2>
-      <p class="lead">Arma tu pedido aquí y envíalo en un solo mensaje. Cuando esté listo el canal oficial de pedidos, este botón lo abrirá directamente.</p>
-      <ul class="channels">
-        <li><b>WhatsApp</b><span class="state" id="ch-wa">Número por confirmar</span></li>
-        <li><b>Delivery</b><span class="state">Plataformas por confirmar</span></li>
-        <li><b>Instagram</b><a class="state" href="https://www.instagram.com/crostagt/" target="_blank" rel="noopener">@crostagt</a></li>
-      </ul>
+      <ol class="how">
+        <li><b>Elige</b><span>Toca «Agregar al pedido» en las pizzas que quieras.</span></li>
+        <li><b>Revisa</b><span>Todo lo que agregas aparece en tu canasta, con la moto de delivery.</span></li>
+        <li><b>Envía</b><span>Completa tus datos y envía el pedido. Te confirmamos por WhatsApp.</span></li>
+      </ol>
       <div class="order-mascot" id="order-walker" aria-hidden="true"></div>
     </div>
 
     <form class="cart" id="cart" novalidate aria-labelledby="t-cart">
-      <h3 id="t-cart">Tu pedido <small id="cart-total">0 pizzas</small></h3>
+      <h3 id="t-cart"><span class="cart-ico"><svg class="moto" viewBox="0 0 48 32" aria-hidden="true"><rect x="2" y="7" width="14" height="11" rx="2"/><path d="M6 12h6"/><circle cx="10" cy="25" r="5"/><circle cx="38" cy="25" r="5"/><path d="M15 25h13l6-10h-5"/><path d="M29 15l-3-8h-5"/><path d="M34 15l4 10"/><path d="M8 18v2h10"/></svg></span>Tu canasta <small id="cart-total">0 pizzas</small></h3>
       <div class="cart-empty" id="cart-empty">
         <span class="m rig-slot" data-rig="m-pizza" aria-hidden="true"></span>
-        <div><p>Todavía no hay pizzas aquí.</p><a class="btn btn-coffee" href="#menu">Elegir del menú</a></div>
+        <div><p>Tu canasta está vacía.</p><a class="btn btn-coffee" href="#menu">Elegir pizzas</a></div>
       </div>
       <ul class="cart-items" id="cart-items" aria-live="polite"></ul>
 
-      <div class="field">
-        <label for="f-name">Tu nombre</label>
-        <input type="text" id="f-name" name="name" autocomplete="name">
-        <span class="err" id="e-name"></span>
-      </div>
-      <fieldset class="field">
-        <legend>Entrega</legend>
-        <div class="seg">
-          <label><input type="radio" name="mode" value="recoger" checked><span>Recoger en el local</span></label>
-          <label><input type="radio" name="mode" value="domicilio"><span>A domicilio</span></label>
+      <div class="checkout" id="checkout">
+        <div class="field">
+          <label for="f-name">Tu nombre</label>
+          <input type="text" id="f-name" name="name" autocomplete="name">
+          <span class="err" id="e-name"></span>
         </div>
-      </fieldset>
-      <div class="field" id="addr-field" hidden>
-        <label for="f-addr">Dirección de entrega</label>
-        <input type="text" id="f-addr" name="addr" autocomplete="street-address">
-        <span class="err" id="e-addr"></span>
-      </div>
-      <div class="field">
-        <label for="f-notes">Notas (opcional)</label>
-        <textarea id="f-notes" name="notes" placeholder="Alergias, hora de recogida, sin albahaca…"></textarea>
+        <div class="field">
+          <label for="f-phone">Tu WhatsApp o teléfono</label>
+          <input type="tel" id="f-phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="Ej. 5555 1234">
+          <span class="err" id="e-phone"></span>
+        </div>
+        <fieldset class="field">
+          <legend>Entrega</legend>
+          <div class="seg">
+            <label><input type="radio" name="mode" value="recoger" checked><span>Recoger en el local</span></label>
+            <label><input type="radio" name="mode" value="domicilio"><span>A domicilio</span></label>
+          </div>
+        </fieldset>
+        <div class="field" id="addr-field" hidden>
+          <label for="f-addr">Dirección de entrega</label>
+          <input type="text" id="f-addr" name="addr" autocomplete="street-address">
+          <span class="err" id="e-addr"></span>
+        </div>
+        <div class="field">
+          <label for="f-notes">Notas (opcional)</label>
+          <textarea id="f-notes" name="notes" placeholder="Alergias, hora de recogida, sin albahaca…"></textarea>
+        </div>
       </div>
       <span class="err" id="e-items"></span>
-      <div class="cart-actions">
-        <button class="btn btn-coffee" type="submit" id="send-btn">Copiar pedido</button>
-        <a class="btn btn-line" href="https://www.instagram.com/crostagt/" target="_blank" rel="noopener"><span>Abrir Instagram</span></a>
-      </div>
+      <button class="btn btn-send" type="submit" id="send-btn"><svg class="wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3Z"/></svg><span id="send-lbl">Enviar pedido por WhatsApp</span></button>
       <p class="cart-status" id="cart-status" role="status"></p>
-      <details class="preview">
-        <summary>Ver el mensaje que se va a enviar</summary>
-        <textarea id="msg-preview" readonly aria-label="Mensaje del pedido"></textarea>
-      </details>
     </form>
   </div>
 </section>
@@ -819,7 +847,7 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
     <div class="f-top">
       <a class="f-logo" href="#inicio" aria-label="Crosta, volver al inicio"><svg viewBox="0 0 864 478.75" aria-hidden="true"><use href="#logo-main"/></svg></a>
       <div class="f-links">
-        <div><h3>Explora</h3><ul><li><a href="#filosofia">Filosofía</a></li><li><a href="#menu">Menú</a></li><li><a href="#proceso">Proceso</a></li><li><a href="#galeria">Galería</a></li></ul></div>
+        <div><h3>Explora</h3><ul><li><a href="#filosofia">Filosofía</a></li><li><a href="#menu">Menú</a></li><li><a href="#proceso">Proceso</a></li></ul></div>
         <div><h3>Encuéntranos</h3><ul><li><a href="#pedidos">Pedidos</a></li><li><a href="#visitanos">Visítanos</a></li><li><a href="https://www.instagram.com/crostagt/" target="_blank" rel="noopener">Instagram</a></li></ul></div>
       </div>
     </div>
@@ -836,11 +864,52 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
   <source src="audio/coltrane.webm" type="audio/webm; codecs=opus">
 </audio>
 
+<button type="button" class="basket-fab" id="basket-fab" data-open-basket aria-label="Abrir tu pedido">
+  <span class="bf-ico"><svg class="moto" viewBox="0 0 48 32" aria-hidden="true"><rect x="2" y="7" width="14" height="11" rx="2"/><path d="M6 12h6"/><circle cx="10" cy="25" r="5"/><circle cx="38" cy="25" r="5"/><path d="M15 25h13l6-10h-5"/><path d="M29 15l-3-8h-5"/><path d="M34 15l4 10"/><path d="M8 18v2h10"/></svg><span class="bf-count" data-count hidden>0</span></span>
+  <span class="bf-txt"><b>Tu pedido</b><small id="bf-sub">Agrega pizzas del menú</small></span>
+</button>
+
+<div class="drawer" id="drawer" hidden>
+  <div class="drawer-bg" data-close-basket></div>
+  <aside class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="t-drawer" tabindex="-1">
+    <header class="drawer-head">
+      <h2 id="t-drawer"><span class="basket-ico" aria-hidden="true"><svg viewBox="0 0 32 28"><path d="M3 11h26l-3 14H6Z"/><path d="M9 11l5-8M23 11l-5-8"/><path d="M11 16v5M16 16v5M21 16v5"/></svg></span>Tu canasta</h2>
+      <button type="button" class="drawer-x" data-close-basket aria-label="Cerrar canasta">×</button>
+    </header>
+    <div class="drawer-body">
+      <div class="dr-empty" id="dr-empty">
+        <span class="m rig-slot" data-rig="m-pizza" aria-hidden="true"></span>
+        <p>Tu canasta está vacía. Agrega pizzas desde el menú.</p>
+        <a class="btn btn-coffee" href="#menu" data-close-basket>Ver el menú</a>
+      </div>
+      <ul class="cart-items" id="dr-items"></ul>
+    </div>
+    <footer class="drawer-foot" id="dr-foot">
+      <p class="dr-total"><span id="dr-total">0 pizzas</span><em>Precios por confirmar</em></p>
+      <a class="btn btn-send" href="#cart" id="dr-go" data-close-basket>Finalizar pedido</a>
+      <a class="dr-more" href="#menu" data-close-basket>Seguir agregando</a>
+    </footer>
+  </aside>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="done" id="done" hidden>
+  <div class="done-card" role="dialog" aria-modal="true" aria-labelledby="t-done" tabindex="-1">
+    <span class="m rig-slot" data-rig="m-thumb" aria-hidden="true"></span>
+    <h2 id="t-done" class="display">¡Pedido enviado!</h2>
+    <p class="done-id">Pedido <b id="done-id"></b></p>
+    <ul class="done-list" id="done-list"></ul>
+    <p id="done-msg">Te confirmamos por WhatsApp en unos minutos.</p>
+    <button type="button" class="btn btn-coffee" id="done-ok">Listo</button>
+  </div>
+</div>
+
 <button class="buddy" id="buddy" type="button" aria-pressed="false" aria-label="Poner música">
   <span class="notes" aria-hidden="true"><i>♪</i><i>♫</i><i>♪</i></span>
   <span class="bubble" id="bubble" aria-live="polite"></span>
   <span class="body" id="buddy-body" aria-hidden="true"></span>
-  <span class="badge" data-count hidden>0</span>
+  
 </button>
 
 <script>
@@ -850,7 +919,9 @@ document.documentElement.classList.add('js');
 /* ====== Configuración: completar cuando estén los datos reales ====== */
 var CONFIG = {
   whatsapp: '',               // ej. '50212345678' (código de país + número, sin signos)
-  instagram: 'https://www.instagram.com/crostagt/'
+  instagram: 'https://www.instagram.com/crostagt/',
+  /* Cada pedido confirmado llega a estos correos. El primero recibe; los demás van en copia. */
+  emails: ['crostapizzagt2025@gmail.com']
 };
 var VB = {'m-walk-a':'0 0 481.98 469.9','m-walk-b':'0 0 428.59 469.91','m-pizza':'0 0 478.56 456.96','m-cross':'0 0 372.42 460.35','m-wine':'0 0 427.8 445.1','m-thumb':'0 0 390.59 427.2','m-wave':'0 0 442.9 427.2','m-stool':'0 0 326.83 438.5','m-smoke':'0 0 394.69 413.96'};
 var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -908,53 +979,96 @@ function rig(pose){
 }
 $$('[data-rig]').forEach(function(el){ el.innerHTML = rig(el.dataset.rig); });
 
-/* Caminantes: paso fluido (rebote, balanceo) y paradas para tomar de la botella */
+/* ====== Caminata articulada: piernas que giran en la cadera, paso a paso ====== */
+var LEGS = {
+  'm-wave':  {hip:343, L:{poly:[[30,343],[188,343],[188,392],[208,392],[208,432],[30,432]], piv:[146,343]},
+                       R:{poly:[[250,343],[352,343],[352,432],[208,432],[208,392],[250,392]], piv:[300,343]}, len:85},
+  'm-pizza': {hip:366, L:{poly:[[40,366],[201,366],[201,418],[218,418],[218,462],[40,462]], piv:[156,366]},
+                       R:{poly:[[265,366],[378,366],[378,462],[218,462],[218,418],[265,418]], piv:[320,366]}, len:88},
+  'm-smoke': {hip:320, L:{poly:[[10,320],[147,320],[147,376],[168,376],[168,418],[10,418]], piv:[106,320]},
+                       R:{poly:[[209,320],[304,320],[304,418],[168,418],[168,378],[209,378]], piv:[256,320]}, len:90},
+  'm-thumb': {hip:346, L:{poly:[[-5,346],[136,346],[136,396],[150,396],[150,432],[-5,432]], piv:[92,346]},
+                       R:{poly:[[198,346],[294,346],[294,394],[338,394],[338,432],[150,432],[150,398],[198,398]], piv:[246,346]}, len:80}
+};
+(function(){
+  var d = '', P = function(a){ return 'M ' + a.map(function(p){ return p[0] + ' ' + p[1]; }).join(' L ') + ' Z'; };
+  Object.keys(LEGS).forEach(function(k){
+    var G = LEGS[k];
+    var up = function(poly, dy){ return poly.map(function(p){ return [p[0], p[1] === G.hip ? G.hip + dy : p[1]]; }); };
+    G.L.leg = up(G.L.poly, -6); G.R.leg = up(G.R.poly, -6); G.L.cut = up(G.L.poly, 5); G.R.cut = up(G.R.poly, 5);
+    d += '<clipPath id="wb-' + k + '"><path clip-rule="evenodd" d="M -2000 -2000 H 4000 V 4000 H -2000 Z ' + P(G.L.cut) + ' ' + P(G.R.cut) + '"/></clipPath>';
+    d += '<clipPath id="wl-' + k + '"><path d="' + P(G.L.leg) + '"/></clipPath><clipPath id="wr-' + k + '"><path d="' + P(G.R.leg) + '"/></clipPath>';
+    d += '<clipPath id="wh-' + k + '"><circle cx="' + G.L.piv[0] + '" cy="' + (G.hip + 6) + '" r="24"/><circle cx="' + G.R.piv[0] + '" cy="' + (G.hip + 6) + '" r="24"/></clipPath>';
+  });
+  var host = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  host.setAttribute('width', '0'); host.setAttribute('height', '0'); host.setAttribute('aria-hidden', 'true'); host.style.position = 'absolute';
+  host.innerHTML = '<defs>' + d + '</defs>'; document.body.insertBefore(host, document.body.firstChild);
+})();
+function rigWalk(pose){
+  var R = RIG[pose] || {}, lids = '';
+  (R.lids || []).forEach(function(r){ lids += '<rect class="lid" x="' + r[0] + '" y="' + r[1] + '" width="' + r[2] + '" height="' + r[3] + '" rx="8"/>'; });
+  return '<svg class="mascot rig walking ' + pose + '" viewBox="' + VB[pose] + '" preserveAspectRatio="xMidYMax meet" style="--bd:-' + (Math.random() * 5).toFixed(2) + 's" aria-hidden="true">'
+    + '<g class="wbody"><use href="#' + pose + '" clip-path="url(#wh-' + pose + ')"/>'
+    + '<g class="legL"><use href="#' + pose + '" clip-path="url(#wl-' + pose + ')"/></g>'
+    + '<g class="legR"><use href="#' + pose + '" clip-path="url(#wr-' + pose + ')"/></g>'
+    + '<g class="torso"><use href="#' + pose + '" clip-path="url(#wb-' + pose + ')"/>' + lids + '</g></g></svg>';
+}
+/* Un caminante: x en px, dirección, velocidad calculada para que los pies no patinen */
 var walkers = [], lastT = 0;
 function Walker(host, opts){
   this.host = host; this.o = opts || {};
-  host.insertAdjacentHTML('beforeend', '<div class="walker-el"><span class="fa">' + rig('m-walk-a') + '</span><span class="fb">' + rig('m-walk-b') + '</span></div>');
-  this.el = host.lastElementChild; this.fa = $('.fa', this.el); this.fb = $('.fb', this.el);
-  this.x = this.o.x || 0; this.dir = this.o.dir || 1; this.speed = this.o.speed || 70;
-  this.step = this.o.step || 0.34; this.phase = 0; this.state = this.o.inPlace ? 'walk' : 'idle'; this.t = 0; this.tilt = 0;
-  this.el.style.transformOrigin = '50% 100%';
+  this.pose = this.o.pose || 'm-thumb';
+  host.insertAdjacentHTML('beforeend', '<div class="walker-el">' + rigWalk(this.pose) + '</div>');
+  this.el = host.lastElementChild; this.svg = $('svg', this.el);
+  this.legL = $('.legL', this.svg); this.legR = $('.legR', this.svg); this.torso = $('.torso', this.svg); this.body = $('.wbody', this.svg);
+  this.G = LEGS[this.pose];
+  this.x = this.o.x || 0; this.dir = this.o.dir || -1; this.A = this.o.amp || 17; this.stepDur = this.o.step || 0.46;
+  this.phase = this.o.phase || 0; this.state = this.o.inPlace ? 'walk' : 'idle'; this.t = 0; this.blend = this.o.inPlace ? 1 : 0;
   walkers.push(this);
   this.render();
 }
+Walker.prototype.scale = function(){ var vb = VB[this.pose].split(' '); return (this.el.clientWidth || 100) / Math.max(+vb[2], +vb[3]); };
+Walker.prototype.speed = function(){ /* zancada real por paso / duración del paso */
+  return 2 * this.G.len * Math.sin(this.A * Math.PI / 180) * this.scale() / this.stepDur;
+};
 Walker.prototype.go = function(from, to, opts){
   opts = opts || {};
   this.x = from; this.to = to; this.dir = to >= from ? 1 : -1; this.state = 'walk';
-  this.stopAt = opts.stopAt; this.onDone = opts.onDone; this.drank = false;
+  this.pauseAt = opts.pauseAt; this.paused = false; this.onDone = opts.onDone;
 };
 Walker.prototype.update = function(dt){
+  var target = 0;
   if (this.state === 'walk') {
-    this.phase += dt / this.step;
+    target = 1;
+    this.phase += dt / this.stepDur;
     if (!this.o.inPlace) {
-      this.x += this.dir * this.speed * dt;
-      if (this.stopAt != null && !this.drank && (this.dir > 0 ? this.x >= this.stopAt : this.x <= this.stopAt)) { this.state = 'drink'; this.t = 0; this.drank = true; }
-      if (this.dir > 0 ? this.x >= this.to : this.x <= this.to) { this.x = this.to; this.state = 'idle'; if (this.onDone) this.onDone(); }
+      this.x += this.dir * this.speed() * dt * this.blend;
+      if (this.pauseAt != null && !this.paused && (this.dir > 0 ? this.x >= this.pauseAt : this.x <= this.pauseAt)) { this.state = 'pause'; this.t = 0; this.paused = true; }
+      if (this.dir > 0 ? this.x >= this.to : this.x <= this.to) { this.x = this.to; this.state = 'stop'; }
     }
-  } else if (this.state === 'drink') {
-    this.t += dt;
-    if (this.t > 2.5) { this.state = 'walk'; }
+  } else if (this.state === 'pause') {
+    this.t += dt; if (this.t > 1.6) this.state = 'walk';
   }
+  /* entrar y salir del paso suavemente (sin saltos) */
+  this.blend += (target - this.blend) * Math.min(1, dt * 7);
+  if (this.state === 'stop' && this.blend < 0.04) { this.state = 'idle'; this.blend = 0; if (this.onDone) this.onDone(); }
+  if (this.state !== 'walk' && this.blend > 0.02) this.phase += dt / this.stepDur * this.blend;
   this.render();
 };
 Walker.prototype.render = function(){
-  var h = this.el.offsetHeight || 100, bob = 0, tilt = 0, f = 0;
-  if (this.state === 'walk') {
-    var s = this.phase * Math.PI;
-    f = Math.floor(this.phase) % 2;
-    bob = -Math.abs(Math.sin(s)) * h * 0.05;
-    tilt = Math.sin(s * 2) * 1.8 + 2;
-  } else if (this.state === 'drink') {
-    var t = this.t, k = t < 0.45 ? t / 0.45 : t < 1.95 ? 1 : Math.max(0, 1 - (t - 1.95) / 0.5);
-    k = k * k * (3 - 2 * k);
-    tilt = -15 * k;
-    if (t > 0.5 && t < 1.9) { tilt += Math.sin((t - 0.5) * 14) * 1.6; bob = -Math.abs(Math.sin((t - 0.5) * 7)) * h * 0.015; }
-  }
-  this.fa.style.visibility = f ? 'hidden' : 'visible';
-  this.fb.style.visibility = f ? 'visible' : 'hidden';
-  this.el.style.transform = 'translate(' + this.x.toFixed(1) + 'px,' + bob.toFixed(1) + 'px) scaleX(' + this.dir + ') rotate(' + (tilt * this.dir).toFixed(2) + 'deg)';
+  var s = this.phase * Math.PI, a = this.A * this.blend * Math.sin(s), G = this.G;
+  var rad = Math.abs(a) * Math.PI / 180;
+  var drop = G.len * (1 - Math.cos(rad));                 /* el cuerpo baja cuando las piernas se abren */
+  var lift = Math.pow(Math.max(0, Math.cos(s)), 2) * 0 ;
+  var sway = Math.sin(s) * 1.4 * this.blend;               /* balanceo lateral del torso */
+  var bob = -Math.abs(Math.cos(s)) * 3.2 * this.blend;     /* sube al pasar la pierna */
+  this.legL.setAttribute('transform', 'rotate(' + a.toFixed(2) + ' ' + G.L.piv[0] + ' ' + G.L.piv[1] + ')');
+  this.legR.setAttribute('transform', 'rotate(' + (-a).toFixed(2) + ' ' + G.R.piv[0] + ' ' + G.R.piv[1] + ')');
+  var cx = (G.L.piv[0] + G.R.piv[0]) / 2;
+  this.torso.setAttribute('transform', 'rotate(' + sway.toFixed(2) + ' ' + cx + ' ' + G.hip + ') translate(0 ' + bob.toFixed(2) + ')');
+  this.body.setAttribute('transform', 'translate(0 ' + (drop + lift).toFixed(2) + ')');
+  /* las poses miran a la izquierda: al ir a la derecha se voltean */
+  this.el.style.transform = 'translate3d(' + this.x.toFixed(1) + 'px,0,0) scaleX(' + (this.dir > 0 ? -1 : 1) + ')';
 };
 function tick(t){
   var dt = lastT ? Math.min(0.05, (t - lastT) / 1000) : 0; lastT = t;
@@ -963,39 +1077,40 @@ function tick(t){
 }
 requestAnimationFrame(tick);
 
-/* Banda roja: cruza la pantalla, se detiene a tomar y sigue */
+window.__crosta = {Walker: Walker, rig: rig, rigWalk: rigWalk};
+/* Banda roja: el de la pizza cruza caminando, se detiene un momento y sigue */
 (function(){
   var host = $('#band-walker'), band = $('.walk-band');
-  var w = new Walker(host, {speed: 95, step: 0.32});
+  var w = new Walker(host, {pose: 'm-pizza', step: 0.5});
   var dir = 1;
   function run(){
     var W = band.clientWidth, s = host.offsetWidth;
     var from = dir > 0 ? -s - 20 : W + 20, to = dir > 0 ? W + 20 : -s - 20;
-    w.go(from, to, { stopAt: W * (0.35 + Math.random() * 0.3), onDone: function(){ dir = -dir; setTimeout(run, 1200); } });
+    w.go(from, to, { pauseAt: W * (0.3 + Math.random() * 0.4), onDone: function(){ dir = -dir; setTimeout(run, 1400); } });
   }
   run();
 })();
-/* Pedidos: camina en su lugar con la botella */
-if ($('#order-walker')) { var ow = new Walker($('#order-walker'), {inPlace: true, step: 0.34}); }
+/* Pedidos: camina en su lugar */
+if ($('#order-walker')) { var ow = new Walker($('#order-walker'), {pose: 'm-thumb', inPlace: true, step: 0.5}); }
 
 /* ====== Datos del menú (provisionales: confirmar con cocina) ====== */
 var PIZZAS = [
-  {id:'p1', name:'Tomate y albahaca', short:'Tomate, mozzarella, albahaca',
+  {id:'p1', slug:'tomate-y-albahaca', name:'Tomate y albahaca', short:'Tomate, mozzarella, albahaca',
    desc:'La base de todo. Salsa de tomate, mozzarella en trozos y albahaca fresca, con queso curado rallado sobre un borde alto y manchado por el horno.',
    ing:['Salsa de tomate','Mozzarella','Albahaca fresca','Queso curado rallado','Pimienta negra'],
    note:'Ingredientes identificados a partir de la fotografía.',
    views:{cenital:'p1-cut', perfil:'p1-perfil', detalle:'p1-detalle'}},
-  {id:'p2', name:'Blanca con jamón curado', short:'Base blanca, jamón curado, brotes',
+  {id:'p2', slug:'blanca-con-jamon-curado', name:'Blanca con jamón curado', short:'Base blanca, jamón curado, brotes',
    desc:'Sin tomate. Una base blanca y cremosa con pliegues de jamón curado, microbrotes y queso rallado.',
    ing:['Base blanca','Jamón curado','Microbrotes','Queso curado rallado'],
    note:'La foto muestra láminas oscuras y rodajas verdes que la cocina debe confirmar antes de publicarlas.',
    views:{cenital:'p2-cut', perfil:'p2-perfil', detalle:'p2-detalle'}},
-  {id:'p3', name:'Salami y alcaparras', short:'Tomate, salami, alcaparras',
+  {id:'p3', slug:'salami-y-alcaparras', name:'Salami y alcaparras', short:'Tomate, salami, alcaparras',
    desc:'Láminas finas de embutido curado sobre tomate, alcaparras, microbrotes y una lluvia de queso rallado.',
    ing:['Salsa de tomate','Embutido curado en láminas','Alcaparras','Microbrotes','Queso curado rallado'],
    note:'Confirmar el tipo exacto de embutido.',
    views:{cenital:'p3-cut', perfil:'p3-perfil', detalle:'p3-detalle'}},
-  {id:'p4', name:'Aceitunas verdes', short:'Tomate, mozzarella, aceitunas',
+  {id:'p4', slug:'aceitunas-verdes', name:'Aceitunas verdes', short:'Tomate, mozzarella, aceitunas',
    desc:'Tomate, mozzarella y aceitunas verdes enteras, con un nido de microbrotes al centro.',
    ing:['Salsa de tomate','Mozzarella','Aceitunas verdes','Microbrotes','Queso curado rallado'],
    note:'Las tiras rojas sobre la pizza están por identificar.',
@@ -1061,7 +1176,7 @@ var active = PIZZAS[0], view = 'cenital', qty = 1;
 PIZZAS.forEach(function(p, i){
   var li = document.createElement('li');
   li.setAttribute('role', 'presentation');
-  li.innerHTML = '<button class="menu-tab" role="tab" id="tab-' + p.id + '" aria-controls="menu-stage" aria-selected="' + (i === 0) + '" tabindex="' + (i === 0 ? 0 : -1) + '" data-id="' + p.id + '"><span class="mini"><img src="img/' + p.views.cenital + '-800.webp" width="110" height="110" alt="" loading="lazy"></span><span class="nm">' + p.name + '</span><span class="pr" aria-label="Precio por confirmar">Q—</span></button>';
+  li.innerHTML = '<button class="menu-tab" role="tab" id="tab-' + p.id + '" aria-controls="menu-stage" aria-selected="' + (i === 0) + '" tabindex="' + (i === 0 ? 0 : -1) + '" data-id="' + p.id + '"><span class="mini"><img src="img/' + p.views.cenital + '-800.webp" width="110" height="110" alt="" loading="lazy"></span><span class="nm">' + p.name + '</span><span class="pr" aria-label="Precio por confirmar">Q—</span></button><button type="button" class="quick-add" data-add="' + p.id + '" aria-label="Agregar ' + p.name + ' al pedido">+ Agregar</button>';
     '<img src="img/' + p.views.cenital + '-800.webp" width="60" height="60" alt="" loading="lazy"><span><span class="nm">' + p.name + '</span><span class="bd">Bebida bundle</span><span class="sh">' + p.short + '</span></span><span class="pr" aria-label="Precio por confirmar">Q—</span></button>';
   list.appendChild(li);
 });
@@ -1099,6 +1214,7 @@ function render(){
   $('#stage-desc').textContent = active.desc;
   $('#stage-ing').innerHTML = active.ing.map(function(x){ return '<li>' + x + '</li>'; }).join('');
   $('#stage-note').textContent = active.note;
+  $('#stage-link').href = 'pizza/' + active.slug + '/';
   $('#menu-stage').setAttribute('aria-labelledby', 'tab-' + active.id);
 }
 function select(id){
@@ -1110,80 +1226,169 @@ $$('.views .chip').forEach(function(c){ c.addEventListener('click', function(){ 
 $('#q-minus').addEventListener('click', function(){ qty = Math.max(1, qty - 1); $('#q-val').textContent = qty; });
 $('#q-plus').addEventListener('click', function(){ qty = Math.min(20, qty + 1); $('#q-val').textContent = qty; });
 $('#add-btn').addEventListener('click', function(){
-  cart[active.id] = (cart[active.id] || 0) + qty;
-  saveCart(); renderCart();
-  $('#added').innerHTML = 'Agregaste ' + qty + ' × ' + active.name + '. <a href="#pedidos">Ver pedido</a>';
-  say('¡Buena elección!'); buddy.classList.remove('jump'); void buddy.offsetWidth; buddy.classList.add('jump');
+  addToCart(active.id, qty, $('#stage-img'));
+  $('#added').innerHTML = 'Agregaste ' + qty + ' × ' + active.name + ' a tu canasta.';
+  qty = 1; $('#q-val').textContent = qty;
+});
+list.addEventListener('click', function(e){
+  var b = e.target.closest('.quick-add'); if (!b) return;
+  addToCart(b.dataset.add, 1, $('img', b.parentNode));
 });
 render();
 
-/* ====== Pedido ====== */
+/* ====== Pedido: canasta, moto de delivery, envío y confirmación ====== */
 var cart = store.get('crosta-cart') || {};
 Object.keys(cart).forEach(function(k){ if (!byId[k] || !(cart[k] > 0)) delete cart[k]; });
 function saveCart(){ store.set('crosta-cart', cart); }
 function cartCount(){ return Object.keys(cart).reduce(function(s, k){ return s + cart[k]; }, 0); }
-var form = $('#cart'), items = $('#cart-items');
-function renderCart(){
-  var ids = Object.keys(cart), n = cartCount();
-  $('#cart-empty').hidden = ids.length > 0;
-  items.innerHTML = ids.map(function(id){
+function plural(n){ return n + (n === 1 ? ' pizza' : ' pizzas'); }
+var form = $('#cart'), fab = $('#basket-fab'), drawer = $('#drawer');
+function itemsHTML(){
+  return Object.keys(cart).map(function(id){
     var p = byId[id];
-    return '<li><img src="img/' + p.views.cenital + '-800.webp" alt="" width="52" height="52"><div><div class="nm">' + p.name + '</div><div class="pr">Bebida bundle, precio por confirmar</div></div>' +
+    return '<li><img src="img/' + p.views.cenital + '-800.webp" alt="" width="56" height="56"><div><div class="nm">' + p.name + '</div><div class="pr">Bebida bundle, precio por confirmar</div><button type="button" class="rm" data-rm="' + id + '">Quitar</button></div>' +
       '<div class="stepper" aria-label="Cantidad de ' + p.name + '"><button type="button" data-dec="' + id + '" aria-label="Una ' + p.name + ' menos">−</button><output>' + cart[id] + '</output><button type="button" data-inc="' + id + '" aria-label="Una ' + p.name + ' más">+</button></div></li>';
   }).join('');
-  $('#cart-total').textContent = n + (n === 1 ? ' pizza' : ' pizzas');
-  $$('[data-count]').forEach(function(el){ el.textContent = n; el.hidden = n === 0; });
-  updatePreview();
 }
-items.addEventListener('click', function(e){
+function renderCart(){
+  var n = cartCount(), has = n > 0, html = itemsHTML();
+  $('#cart-items').innerHTML = html; $('#dr-items').innerHTML = html;
+  $('#cart-empty').hidden = has; $('#checkout').hidden = !has; $('#send-btn').hidden = !has;
+  $('#dr-empty').hidden = has; $('#dr-foot').hidden = !has;
+  $('#cart-total').textContent = plural(n); $('#dr-total').textContent = plural(n) + ' en tu canasta';
+  $('#bf-sub').textContent = has ? plural(n) + ' · ver y enviar' : 'Agrega pizzas del menú';
+  fab.classList.toggle('has', has);
+  $$('[data-count]').forEach(function(el){ el.textContent = n; el.hidden = !has; });
+}
+function onListClick(e){
   var b = e.target.closest('button'); if (!b) return;
   if (b.dataset.inc) cart[b.dataset.inc] = Math.min(20, cart[b.dataset.inc] + 1);
   if (b.dataset.dec) { cart[b.dataset.dec]--; if (cart[b.dataset.dec] <= 0) delete cart[b.dataset.dec]; }
+  if (b.dataset.rm) delete cart[b.dataset.rm];
   saveCart(); renderCart();
-});
+}
+$('#cart-items').addEventListener('click', onListClick);
+$('#dr-items').addEventListener('click', onListClick);
+/* Agregar: la pizza vuela a la moto, la moto rebota y aparece un aviso */
+var toastT;
+function toast(html){
+  var t = $('#toast'); t.innerHTML = html; t.classList.add('on');
+  clearTimeout(toastT); toastT = setTimeout(function(){ t.classList.remove('on'); }, 3800);
+}
+$('#toast').addEventListener('click', function(e){ if (e.target.closest('button')) { $('#toast').classList.remove('on'); openBasket(); } });
+function flyTo(img){
+  if (!img || !img.getBoundingClientRect || !fab.animate) return;
+  var a = img.getBoundingClientRect(), b = $('.bf-ico', fab).getBoundingClientRect();
+  var size = Math.min(140, Math.max(60, a.width * 0.5));
+  var f = document.createElement('img'); f.src = img.currentSrc || img.src; f.className = 'fly';
+  f.style.width = f.style.height = size + 'px';
+  f.style.left = (a.left + a.width / 2 - size / 2) + 'px'; f.style.top = (a.top + a.height / 2 - size / 2) + 'px';
+  document.body.appendChild(f);
+  var dx = b.left + b.width / 2 - (a.left + a.width / 2), dy = b.top + b.height / 2 - (a.top + a.height / 2);
+  f.animate([
+    {transform: 'translate(0,0) scale(1) rotate(0)', opacity: 1},
+    {transform: 'translate(' + dx * 0.5 + 'px,' + (dy * 0.5 - 120) + 'px) scale(.7) rotate(160deg)', opacity: 1, offset: .55},
+    {transform: 'translate(' + dx + 'px,' + dy + 'px) scale(.18) rotate(320deg)', opacity: .9}
+  ], {duration: 750, easing: 'cubic-bezier(.45,0,.3,1)'}).onfinish = function(){ f.remove(); bump(); };
+}
+function bump(){ fab.classList.remove('bump'); void fab.offsetWidth; fab.classList.add('bump'); }
+function addToCart(id, n, img){
+  cart[id] = Math.min(20, (cart[id] || 0) + n);
+  saveCart(); renderCart();
+  if (img) flyTo(img); else bump();
+  toast('<span>Agregaste ' + n + ' × ' + byId[id].name + '</span><button type="button">Ver canasta</button>');
+}
+/* Abrir y cerrar la canasta */
+var lastFocusB;
+function openBasket(){
+  lastFocusB = document.activeElement; drawer.hidden = false; document.body.style.overflow = 'hidden';
+  setTimeout(function(){ $('.drawer-panel', drawer).focus(); }, 30);
+}
+function closeBasket(){ drawer.hidden = true; document.body.style.overflow = ''; if (lastFocusB && lastFocusB.focus) lastFocusB.focus({preventScroll: true}); }
+$$('[data-open-basket]').forEach(function(b){ b.addEventListener('click', openBasket); });
+$$('[data-close-basket]', drawer).forEach(function(b){ b.addEventListener('click', function(){ closeBasket(); }); });
+$('#dr-go').addEventListener('click', function(){ setTimeout(function(){ $('#f-name').focus({preventScroll: true}); }, 600); });
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !drawer.hidden) closeBasket(); });
+if (location.hash === '#canasta') setTimeout(openBasket, 400);
+
 function mode(){ return form.querySelector('input[name=mode]:checked').value; }
-$$('input[name=mode]', form).forEach(function(r){ r.addEventListener('change', function(){ $('#addr-field').hidden = mode() !== 'domicilio'; updatePreview(); }); });
-['f-name','f-addr','f-notes'].forEach(function(id){ $('#' + id).addEventListener('input', updatePreview); });
-function message(){
-  var lines = ['Hola, Crosta. Quiero hacer un pedido:', ''];
-  Object.keys(cart).forEach(function(id){ lines.push(cart[id] + ' × ' + byId[id].name); });
-  lines.push('');
-  var nm = $('#f-name').value.trim(); if (nm) lines.push('Nombre: ' + nm);
+$$('input[name=mode]', form).forEach(function(r){ r.addEventListener('change', function(){ $('#addr-field').hidden = mode() !== 'domicilio'; }); });
+function orderLines(){ return Object.keys(cart).map(function(id){ return cart[id] + ' × ' + byId[id].name; }); }
+function message(id){
+  var lines = ['Hola, Crosta. Quiero hacer un pedido (' + id + '):', ''].concat(orderLines(), ['']);
+  lines.push('Nombre: ' + $('#f-name').value.trim());
+  lines.push('Teléfono: ' + $('#f-phone').value.trim());
   lines.push('Entrega: ' + (mode() === 'domicilio' ? 'a domicilio' : 'recoger en el local'));
-  if (mode() === 'domicilio' && $('#f-addr').value.trim()) lines.push('Dirección: ' + $('#f-addr').value.trim());
+  if (mode() === 'domicilio') lines.push('Dirección: ' + $('#f-addr').value.trim());
   var nt = $('#f-notes').value.trim(); if (nt) lines.push('Notas: ' + nt);
   return lines.join('\n');
 }
-function updatePreview(){ $('#msg-preview').value = message(); }
+/* Copia por correo (FormSubmit). El primer pedido envía un correo de activación a la bandeja indicada. */
+function emailOrder(id){
+  if (!CONFIG.emails || !CONFIG.emails.length || !window.fetch) return Promise.resolve(false);
+  var data = {
+    _subject: 'Nuevo pedido ' + id + ' — Crosta', _template: 'table', _captcha: 'false',
+    Pedido: id, Pizzas: orderLines().join(' | '), Total: plural(cartCount()),
+    Nombre: $('#f-name').value.trim(), Telefono: $('#f-phone').value.trim(),
+    Entrega: mode() === 'domicilio' ? 'A domicilio' : 'Recoger en el local',
+    Direccion: mode() === 'domicilio' ? $('#f-addr').value.trim() : '—',
+    Notas: $('#f-notes').value.trim() || '—', Fecha: new Date().toLocaleString('es-GT')
+  };
+  if (CONFIG.emails.length > 1) data._cc = CONFIG.emails.slice(1).join(',');
+  var ctrl = window.AbortController ? new AbortController() : null;
+  var timer = setTimeout(function(){ if (ctrl) ctrl.abort(); }, 10000);
+  return fetch('https://formsubmit.co/ajax/' + encodeURIComponent(CONFIG.emails[0]), {
+    method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+    body: JSON.stringify(data), signal: ctrl ? ctrl.signal : undefined
+  }).then(function(r){ return r.json(); }).then(function(j){ clearTimeout(timer); return String(j.success) === 'true'; })
+    .catch(function(){ clearTimeout(timer); return false; });
+}
 var sendBtn = $('#send-btn'), status = $('#cart-status');
-if (CONFIG.whatsapp) { sendBtn.textContent = 'Enviar por WhatsApp'; $('#ch-wa').textContent = 'Disponible'; }
+if (!CONFIG.whatsapp) $('#send-lbl').textContent = 'Enviar pedido';
 form.addEventListener('submit', function(e){
   e.preventDefault();
   var ok = true;
-  $('#e-items').textContent = ''; $('#e-name').textContent = ''; $('#e-addr').textContent = '';
+  ['e-items','e-name','e-phone','e-addr'].forEach(function(k){ $('#' + k).textContent = ''; });
   if (!cartCount()) { $('#e-items').textContent = 'Agrega al menos una pizza desde el menú.'; ok = false; }
   if (!$('#f-name').value.trim()) { $('#e-name').textContent = 'Escribe tu nombre para saber de quién es el pedido.'; ok = false; }
+  if ($('#f-phone').value.replace(/\D/g, '').length < 8) { $('#e-phone').textContent = 'Escribe un número de 8 dígitos para confirmarte el pedido.'; ok = false; }
   if (mode() === 'domicilio' && !$('#f-addr').value.trim()) { $('#e-addr').textContent = 'Escribe la dirección de entrega.'; ok = false; }
-  if (!ok) { status.textContent = ''; var first = form.querySelector('.err:not(:empty)'); if (first && first.id === 'e-name') $('#f-name').focus(); else if (first && first.id === 'e-addr') $('#f-addr').focus(); return; }
-  var text = message();
+  if (!ok) { status.textContent = ''; var first = form.querySelector('.err:not(:empty)'); var map = {'e-name':'#f-name','e-phone':'#f-phone','e-addr':'#f-addr'}; if (first && map[first.id]) $(map[first.id]).focus(); return; }
+  var id = 'CR-' + Date.now().toString(36).slice(-5).toUpperCase();
+  var text = message(id), summary = orderLines();
+  /* WhatsApp se abre dentro del clic para que el navegador no lo bloquee */
   if (CONFIG.whatsapp) {
-    var a = document.createElement('a'); a.href = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(text); a.target = '_blank'; a.rel = 'noopener'; document.body.appendChild(a); a.click(); a.remove();
-    status.textContent = 'Abrimos WhatsApp con tu pedido listo para enviar.';
-    return;
+    var a = document.createElement('a'); a.href = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(text); a.target = '_blank'; a.rel = 'noopener';
+    document.body.appendChild(a); a.click(); a.remove();
   }
-  var fallback = function(){ var d = $('.preview', form); d.open = true; var t = $('#msg-preview'); t.focus(); t.select(); status.textContent = 'Copia el mensaje seleccionado y envíalo por mensaje directo a @crostagt.'; };
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text).then(function(){ status.textContent = 'Pedido copiado. Pégalo en un mensaje directo a @crostagt en Instagram.'; say('¡Copiado! Ahora a Instagram.'); }, fallback);
-  } else { fallback(); }
+  sendBtn.setAttribute('aria-busy', 'true'); status.textContent = 'Enviando tu pedido…';
+  emailOrder(id).then(function(mailed){
+    sendBtn.removeAttribute('aria-busy');
+    if (!mailed && !CONFIG.whatsapp) {
+      status.textContent = 'No se pudo enviar el pedido. Revisa tu conexión e inténtalo de nuevo, o escríbenos por Instagram a @crostagt.';
+      return;
+    }
+    status.textContent = '';
+    showDone(id, summary, mailed);
+    cart = {}; saveCart(); renderCart(); form.reset(); $('#addr-field').hidden = true;
+  });
 });
+function showDone(id, summary, mailed){
+  $('#done-id').textContent = id;
+  $('#done-list').innerHTML = summary.map(function(l){ var m = l.split(' × '); return '<li><span>' + m[1] + '</span><b>× ' + m[0] + '</b></li>'; }).join('');
+  $('#done-msg').textContent = CONFIG.whatsapp ? 'Envía el mensaje que se abrió en WhatsApp y te confirmamos en unos minutos.' : 'Recibimos tu pedido. Te escribimos al número que nos dejaste para confirmarlo.';
+  $('#done').hidden = false; $('.done-card').focus();
+  say('¡Pedido enviado!', 3000);
+}
+$('#done-ok').addEventListener('click', function(){ $('#done').hidden = true; });
 renderCart();
 
 /* ====== Proceso: recorrido horizontal ====== */
 var proc = $('#proceso'), pin = $('#process-pin'), track = $('#process-track'), bar = $('#p-bar');
-var mqWide = matchMedia('(min-width: 900px) and (min-height: 560px)');
+var mqWide = matchMedia('(min-height: 420px)');
 var dist = 0, pinned = false;
 function layoutProcess(){
-  pinned = mqWide.matches && !reduce;
+  pinned = mqWide.matches;
   proc.classList.toggle('is-static', !pinned);
   if (!pinned) { pin.style.height = ''; track.style.transform = ''; return; }
   dist = Math.max(0, track.scrollWidth - innerWidth);
@@ -1201,59 +1406,6 @@ addEventListener('scroll', function(){ requestAnimationFrame(onProcScroll); }, {
 addEventListener('resize', layoutProcess);
 addEventListener('load', layoutProcess);
 layoutProcess();
-
-/* ====== Galería ====== */
-var GALLERY = [
-  ['p1-perfil','g1','Pizza de tomate, mozzarella y albahaca vista de perfil, con el borde inflado y tostado.'],
-  ['estirado','g2','Masa estirada en el aire frente al delantal del pizzero.'],
-  ['p3-detalle','g3','Detalle de la pizza de salami: alcaparras, microbrotes y queso rallado sobre el borde.'],
-  ['cornicione-forma','g4','Dedos formando el borde de la masa entre harina.'],
-  ['p2-cenital','g5','Pizza blanca con jamón curado vista desde arriba.'],
-  ['sazon-bn','g6','En blanco y negro: pimienta sobre la pizza cruda.'],
-  ['cornicione-miga','g7','Corte del borde: miga abierta y costra tostada.'],
-  ['cruda-estirada','g8','La pizza cruda, con tomate y mozzarella, se levanta para pasarla a la pala.'],
-  ['mozzarella','g9','Mozzarella desgarrada a mano sobre el tomate.'],
-  ['p4-cenital','g10','Pizza de aceitunas verdes vista desde arriba.'],
-  ['masa-pliegue','g11','Las manos pliegan la masa sobre la mesa enharinada.'],
-  ['p2-detalle','g12','Detalle de la pizza blanca: jamón curado, brotes y borde manchado por el horno.'],
-  ['salsa','g13','Una cuchara extiende la salsa de tomate sobre la masa; al lado, albahaca fresca.'],
-  ['p2-perfil','g14','Pizza blanca con jamón curado vista de perfil.'],
-  ['p1-cenital','g15','Pizza de tomate, mozzarella y albahaca vista desde arriba.'],
-  ['masa-presion','g16','Una mano abre la masa sobre la mesa enharinada.'],
-  ['p3-cenital','g17','Pizza de salami y alcaparras vista desde arriba.'],
-  ['p3-perfil','g18','Pizza de salami y alcaparras vista de perfil, con el borde alto y tostado.'],
-  ['p1-detalle','g19','Detalle del borde inflado y la albahaca sobre la mozzarella.'],
-  ['harina','g20','Manos que sacuden la harina sobre el bollo de masa.']
-];
-var grid = $('#g-grid');
-grid.innerHTML = GALLERY.map(function(g, i){
-  return '<button class="g-item ' + g[1] + '" data-i="' + i + '" aria-label="Ampliar: ' + g[2] + '"><img src="img/' + g[0] + '-800.webp" alt="" loading="lazy"></button>';
-}).join('');
-var lb = $('#lightbox'), lbImg = $('#lb-img'), lbIdx = 0, lastFocus;
-function show(i){
-  lbIdx = (i + GALLERY.length) % GALLERY.length;
-  var g = GALLERY[lbIdx];
-  lbImg.src = 'img/' + g[0] + '-1600.webp'; lbImg.alt = g[2];
-  $('#lb-cap').textContent = g[2];
-  $('#lb-count').textContent = (lbIdx + 1) + ' de ' + GALLERY.length;
-}
-grid.addEventListener('click', function(e){
-  var b = e.target.closest('.g-item'); if (!b) return;
-  lastFocus = b; show(+b.dataset.i);
-  if (lb.showModal) lb.showModal(); else lb.setAttribute('open', '');
-  document.body.style.overflow = 'hidden';
-});
-function closeLb(){ if (lb.close) lb.close(); else lb.removeAttribute('open'); }
-lb.addEventListener('close', function(){ document.body.style.overflow = ''; if (lastFocus) lastFocus.focus(); });
-$('#lb-close').addEventListener('click', closeLb);
-$('#lb-prev').addEventListener('click', function(){ show(lbIdx - 1); });
-$('#lb-next').addEventListener('click', function(){ show(lbIdx + 1); });
-lb.addEventListener('keydown', function(e){ if (e.key === 'ArrowLeft') show(lbIdx - 1); if (e.key === 'ArrowRight') show(lbIdx + 1); });
-var sx = null;
-$('#lb-stage').addEventListener('pointerdown', function(e){ sx = e.clientX; });
-$('#lb-stage').addEventListener('pointerup', function(e){ if (sx === null) return; var d = e.clientX - sx; if (Math.abs(d) > 50) show(lbIdx + (d < 0 ? 1 : -1)); sx = null; });
-$('#lb-stage').addEventListener('click', function(e){ if (e.target === e.currentTarget) closeLb(); });
-
 
 /* ====== Música: el personaje la pone y la pausa ======
    Los navegadores no permiten sonido automático al entrar: suena con el primer toque, clic o tecla del visitante. */
@@ -1281,12 +1433,13 @@ $('#lb-stage').addEventListener('click', function(e){ if (e.target === e.current
   });
   var tried = audio.play();
   if (tried && tried.then) tried.then(function(){ audio.volume = 0; setUI(true); fadeTo(VOL, 1600); }, function(){ setTimeout(greet, 1400); setTimeout(function(){ if (!buddy.classList.contains('is-playing') && !dismissed) greet(); }, 22000); });
+  function announce(){ say('🎶 ¡Puse música! Apáchame si quieres pausarla.', 5000); }
   function greet(){
     if (buddy.classList.contains('is-playing')) return;
     showBuddy('m-wave');
     buddy.classList.remove('jump'); void buddy.offsetWidth; buddy.classList.add('jump', 'hello');
-    say('¡Hola! ¿Quieres escuchar música? Apáchame.', 5200);
-    setTimeout(function(){ buddy.classList.remove('hello'); showBuddy(currentPose); }, 5200);
+    say('¡Hola! Voy a poner música cuando toques la pantalla. Si quieres pausarla, apáchame.', 6000);
+    setTimeout(function(){ buddy.classList.remove('hello'); showBuddy(currentPose); }, 6000);
   }
   /* En celular el permiso para sonar llega al levantar el dedo (touchend/click), no al tocar. */
   var GESTURES = ['touchend', 'click', 'keydown'];
@@ -1297,8 +1450,8 @@ $('#lb-stage').addEventListener('click', function(e){ if (e.target === e.current
     if (!available) { unbind(); return; }
     audio.volume = 0;
     var pr = audio.play();
-    if (pr && pr.then) pr.then(function(){ unbind(); setUI(true); fadeTo(VOL, 1600); }, function(){ /* se reintenta en el siguiente toque */ });
-    else { unbind(); setUI(true); fadeTo(VOL, 1600); }
+    if (pr && pr.then) pr.then(function(){ unbind(); setUI(true); fadeTo(VOL, 1600); announce(); }, function(){ /* se reintenta en el siguiente toque */ });
+    else { unbind(); setUI(true); fadeTo(VOL, 1600); announce(); }
   }
   GESTURES.forEach(function(t){ addEventListener(t, firstTouch, true); });
 })();
@@ -1306,6 +1459,7 @@ $('#lb-stage').addEventListener('click', function(e){ if (e.target === e.current
 /* ====== Escena del pie: llegan caminando y cada uno hace lo suyo ====== */
 var scene = $('#scene');
 var CAST = ['m-wave','m-pizza','m-cross','m-wine','m-smoke','m-stool','m-thumb'];
+var WALKS_AS = {'m-wave':'m-wave','m-pizza':'m-pizza','m-smoke':'m-smoke','m-thumb':'m-thumb','m-cross':'m-thumb','m-wine':'m-thumb','m-stool':'m-thumb'};
 var actors = CAST.map(function(pose, i){
   var a = document.createElement('div');
   a.className = 'actor'; a.style.setProperty('--slot', i);
@@ -1316,22 +1470,22 @@ var actors = CAST.map(function(pose, i){
 var roamHost = document.createElement('div'); roamHost.className = 'roamer'; scene.insertBefore(roamHost, scene.firstChild);
 function enter(){
   scene.classList.add('is-in');
-  var vis = actors.filter(function(a){ return getComputedStyle(a).display !== 'none'; });
-  var last = vis[vis.length - 1], D = last ? last.offsetLeft + last.offsetWidth + 60 : 0;
-  vis.forEach(function(a, i){
-    var w = new Walker(a, {speed: 230, step: 0.3 + (i % 2) * 0.03});
-    w.phase = i * 0.5; w.x = -D; w.render();
-    setTimeout(function(){ w.go(-D, 0, { onDone: function(){ a.classList.add('arrived'); } }); }, (vis.length - 1 - i) * 90);
+  var W = scene.clientWidth;
+  /* entran desde la derecha, en fila, cada uno con su paso; el primero en llegar es el de la izquierda */
+  actors.forEach(function(a, i){
+    var w = new Walker(a, {pose: WALKS_AS[CAST[i]], step: 0.42 + (i % 3) * 0.04, phase: i * 0.37});
+    var from = W - a.offsetLeft + 30 + i * a.offsetWidth * 0.35;
+    w.x = from; w.dir = -1; w.render();
+    setTimeout(function(){ w.go(from, 0, { onDone: function(){ a.classList.add('arrived'); } }); }, i * 220);
   });
-  actors.forEach(function(a){ if (vis.indexOf(a) < 0) a.classList.add('arrived'); });
-  var rw = new Walker(roamHost, {speed: 80, step: 0.33}), dir = -1;
+  var rw = new Walker(roamHost, {pose: 'm-smoke', step: 0.55}), dir = 1;
   rw.x = -400; rw.render();
   function roam(){
-    var W = scene.clientWidth, s = roamHost.offsetWidth;
-    var from = dir > 0 ? -s - 20 : W + 20, to = dir > 0 ? W + 20 : -s - 20;
-    rw.go(from, to, { stopAt: W * (0.3 + Math.random() * 0.4), onDone: function(){ dir = -dir; setTimeout(roam, 5000); } });
+    var Wn = scene.clientWidth, s = roamHost.offsetWidth;
+    var from = dir > 0 ? -s - 20 : Wn + 20, to = dir > 0 ? Wn + 20 : -s - 20;
+    rw.go(from, to, { pauseAt: Wn * (0.3 + Math.random() * 0.4), onDone: function(){ dir = -dir; setTimeout(roam, 6000); } });
   }
-  setTimeout(roam, 4500);
+  setTimeout(roam, 9000);
 }
 new IntersectionObserver(function(en, obs){ if (en[0].isIntersecting) { enter(); obs.disconnect(); } }, {threshold:.25}).observe(scene);
 })();
