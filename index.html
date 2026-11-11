@@ -21,10 +21,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Restaurant","@id":"https://crostagt.com/#restaurante","name":"Crosta","url":"https://crostagt.com/","image":"https://crostagt.com/img/og.jpg","logo":"https://crostagt.com/img/favicon.svg","servesCuisine":["Pizza","Pizza neonapolitana"],"slogan":"Lo nuestro es fuego con libertad","acceptsReservations":false,"address":{"@type":"PostalAddress","addressLocality":"Ciudad de Guatemala","addressCountry":"GT"},"sameAs":["https://www.instagram.com/crostagt/"],
 "hasMenu":{"@type":"Menu","name":"Menú Crosta","hasMenuSection":{"@type":"MenuSection","name":"Pizzas","hasMenuItem":[
-{"@type":"MenuItem","name":"Pizza Tomate y albahaca","url":"https://crostagt.com/pizza/tomate-y-albahaca/"},
-{"@type":"MenuItem","name":"Pizza Blanca con jamón curado","url":"https://crostagt.com/pizza/blanca-con-jamon-curado/"},
-{"@type":"MenuItem","name":"Pizza Salami y alcaparras","url":"https://crostagt.com/pizza/salami-y-alcaparras/"},
-{"@type":"MenuItem","name":"Pizza Aceitunas verdes","url":"https://crostagt.com/pizza/aceitunas-verdes/"}]}}}
+{"@type":"MenuItem","name":"Pizza Bella Roja","url":"https://crostagt.com/pizza/bella-roja/"},
+{"@type":"MenuItem","name":"Pizza Noche Blanca","url":"https://crostagt.com/pizza/noche-blanca/"},
+{"@type":"MenuItem","name":"Pizza Rubí","url":"https://crostagt.com/pizza/rubi/"},
+{"@type":"MenuItem","name":"Pizza Mallorquina","url":"https://crostagt.com/pizza/mallorquina/"}]}}}
 </script>
 <style>
 /* ============ Tipografías de marca (brand book) ============ */
@@ -174,8 +174,16 @@ p{margin:0 0 1em}
 .value{display:grid;grid-template-columns:minmax(150px,.8fr) 1.6fr;gap:12px 28px;padding-block:clamp(22px,3vw,40px);border-bottom:1px solid var(--coffee)}
 .value dt{font-family:var(--display);font-stretch:125%;font-weight:800;font-size:clamp(1.05rem,1.4vw,1.35rem);line-height:1.05}
 .value dd{margin:0;max-width:52ch}
-.philo-quote{grid-column:7 / -1;display:flex;gap:24px;align-items:center;align-self:center}
-.philo-quote .m{width:120px;height:120px;flex:none;color:var(--coffee);--ml:var(--dough)}
+.philo{overflow-x:clip}
+.philo-quote{grid-column:7 / -1;margin-top:clamp(32px,4vw,56px)}
+.pq-track{display:flex;align-items:flex-end;gap:2px;will-change:transform}
+.philo-quote .m{position:relative;width:120px;height:120px;flex:none;color:var(--coffee);--ml:var(--dough)}
+.pq-guy .walker-el{transform-origin:50% 100%}
+.pq-guy .act{position:absolute;inset:0;transform:scaleX(-1)}
+.philo-quote p{transform-origin:0 100%;margin-bottom:10px!important}
+.pq-track.pushing p{transform:rotate(-1.2deg)}
+.pq-track.landed p{animation:pqLand .55s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pqLand{0%{transform:rotate(-1.2deg)}40%{transform:translateX(6px) scale(1.03,.97)}100%{transform:none}}
 .philo-quote p{font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:clamp(1.2rem,2vw,1.8rem);line-height:1;margin:0;max-width:16ch}
 @media (max-width:860px){
   .philo-head h2,.philo-statement,.philo-photo,.values,.philo-quote{grid-column:1/-1}
@@ -230,8 +238,8 @@ p{margin:0 0 1em}
 .stage-bundle{font-weight:700;margin-bottom:.9em}
 .stage-desc{font-size:clamp(1.02rem,1.2vw,1.15rem);max-width:40ch}
 .stage-info h4{font-size:.95rem;margin:1.4em 0 .6em;font-weight:700}
-.ing{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-.ing li{padding:.32em .9em;border-radius:999px;background:var(--dough);font-size:.9rem}
+.ing-text{margin:0;font-size:1.05rem;max-width:42ch;line-height:1.5}
+
 .stage-link{display:inline-block;margin-top:12px;font-weight:700;text-underline-offset:4px}
 .stage-note{font-size:.86rem;margin-top:14px;max-width:46ch;opacity:.85}
 .buy{margin-top:26px;padding-top:22px;border-top:2px solid var(--coffee);display:flex;flex-wrap:wrap;align-items:center;gap:14px}
@@ -373,7 +381,7 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
 .f-links ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 .f-links a{text-decoration:none}.f-links a:hover{text-decoration:underline;text-underline-offset:4px}
 .scene{position:relative;height:clamp(120px,15vw,200px);margin-top:clamp(48px,7vw,96px);border-bottom:2px solid var(--red);overflow:hidden}
-.actor{position:absolute;bottom:0;left:calc(var(--slot) * 16.66% + 1%);width:clamp(70px,10vw,150px);aspect-ratio:1;color:var(--red);--ml:var(--coffee)}
+.actor{position:absolute;bottom:0;left:calc(var(--slot) * 16.66% + 1%);width:clamp(70px,10vw,150px);aspect-ratio:1;--ml:var(--coffee)}
 .actor .walker-el{position:absolute;inset:0}
 .actor .act{position:absolute;inset:0;opacity:0}
 .actor.arrived .walker-el{display:none}
@@ -439,6 +447,8 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
 .rig .fx{fill:var(--fx,#DCD7CB)}
 .rig .smoke circle{transform-box:fill-box;transform-origin:50% 50%;opacity:0}
 .rig .crumb{transform-box:fill-box;opacity:0;fill:currentColor}
+.rig .patch{fill:currentColor}
+.rig .cheese{fill:#FFF3DA}
 .rig .spark{transform-box:fill-box;transform-origin:50% 50%;opacity:0;fill:var(--fx,#FF4027)}
 .walker-el{position:absolute;inset:0;will-change:transform}
 .walker-el .rig{position:absolute;inset:0}
@@ -459,6 +469,7 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
   .m-smoke .wisp circle{animation:wisp 2.6s ease-out infinite}
   .m-smoke .wisp circle:nth-child(2){animation-delay:.9s}.m-smoke .wisp circle:nth-child(3){animation-delay:1.8s}
   .m-pizza .rr{animation:chomp3 6s ease-in-out infinite}
+  .m-pizza .limb{animation:feed 6s ease-in-out infinite}
   .m-pizza .crumb{animation:crumb 6s ease-in infinite}
   .m-pizza .crumb:nth-of-type(2){animation-delay:.08s}.m-pizza .crumb:nth-of-type(3){animation-delay:.16s}
   .m-thumb .rr{animation:thumbs 2.8s ease-in-out infinite}
@@ -474,8 +485,9 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
 @keyframes drag{0%,25%,72%,100%{transform:rotate(0)}38%,56%{transform:rotate(17deg)}}
 @keyframes puff{0%,58%{opacity:0;transform:translate(0,0) scale(.3)}64%{opacity:.75}100%{opacity:0;transform:translate(-30px,-70px) scale(2.2)}}
 @keyframes wisp{0%{opacity:0;transform:translate(0,0) scale(.4)}20%{opacity:.55}100%{opacity:0;transform:translate(-10px,-60px) scale(1.6)}}
-@keyframes chomp3{0%,10%,28%,40%,58%,70%,88%,100%{transform:none}14%,44%,74%{transform:rotate(-3deg) translateY(-1.5%) scale(1.01,.99)}18%,48%,78%{transform:scale(1.02,.97)}}
-@keyframes crumb{0%,14%,44%,74%{opacity:0;transform:translate(0,0)}16%,46%,76%{opacity:1}26%,56%,86%{opacity:0;transform:translate(-6px,60px)}100%{opacity:0}}
+@keyframes chomp3{0%,6%,30%,36%,60%,66%,90%,100%{transform:none}12%,42%,72%{transform:rotate(-2.5deg) translateY(1%)}17%,21%,47%,51%,77%,81%{transform:scale(1.025,.965)}19%,23%,49%,53%,79%,83%{transform:scale(.99,1.01)}}
+@keyframes feed{0%,4%,26%,34%,56%,64%,86%,100%{transform:rotate(0)}11%,14%,41%,44%,71%,74%{transform:rotate(11deg)}}
+@keyframes crumb{0%,14%,44%,74%{opacity:0;transform:translate(0,0)}16%,46%,76%{opacity:1}28%,58%,88%{opacity:0;transform:translate(-8px,70px)}100%{opacity:0}}
 @keyframes thumbs{0%,62%,100%{transform:none}70%{transform:translateY(-6%) scale(.97,1.04)}78%{transform:scale(1.05,.95)}86%{transform:translateY(-2%)}}
 @keyframes spark{0%,66%{opacity:0;transform:scale(.2) rotate(0)}74%{opacity:1;transform:scale(1.1) rotate(45deg)}90%{opacity:0;transform:scale(.6) rotate(90deg)}100%{opacity:0}}
 @keyframes swayStool{0%,100%{transform:rotate(-1.5deg)}50%{transform:rotate(1.5deg)}}
@@ -483,9 +495,9 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
 @media all{
   .bite.b1{animation:bite1 6s infinite}.bite.b2{animation:bite2 6s infinite}.bite.b3{animation:bite3 6s infinite}
 }
-@keyframes bite1{0%,14%{transform:scale(0)}16%,96%{transform:scale(1)}100%{transform:scale(0)}}
-@keyframes bite2{0%,44%{transform:scale(0)}46%,96%{transform:scale(1)}100%{transform:scale(0)}}
-@keyframes bite3{0%,74%{transform:scale(0)}76%,96%{transform:scale(1)}100%{transform:scale(0)}}
+@keyframes bite1{0%,12%{transform:scale(0)}13%,96%{transform:scale(1)}100%{transform:scale(0)}}
+@keyframes bite2{0%,42%{transform:scale(0)}43%,96%{transform:scale(1)}100%{transform:scale(0)}}
+@keyframes bite3{0%,72%{transform:scale(0)}73%,96%{transform:scale(1)}100%{transform:scale(0)}}
 
 
 /* ============ Canasta, moto de delivery y confirmación ============ */
@@ -493,12 +505,13 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
 .btn-order{gap:.5em}
 .btn-order .moto{width:26px;height:18px}
 .btn-order .count{background:var(--coffee);color:var(--red)}
-.basket-fab{position:fixed;left:clamp(10px,2vw,24px);bottom:clamp(10px,2vw,22px);z-index:96;display:flex;align-items:center;gap:12px;padding:8px 18px 8px 8px;border-radius:999px;border:2px solid var(--coffee);background:var(--red);color:var(--coffee);box-shadow:0 6px 0 var(--coffee);transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.basket-fab{position:fixed;left:clamp(12px,2vw,24px);bottom:clamp(12px,2vw,22px);z-index:96;display:grid;place-items:center;padding:0;border:0;border-radius:50%;background:none;color:var(--coffee);transition:transform .25s var(--ease),opacity .25s}
+.basket-fab:not(.has) .bf-ico{background:var(--paper);color:var(--coffee);box-shadow:0 0 0 2px var(--coffee)}
 .basket-fab:hover{transform:translateY(-2px)}
-.basket-fab:active{transform:translateY(4px);box-shadow:0 2px 0 var(--coffee)}
-.bf-ico{position:relative;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--coffee);color:var(--red)}
-.bf-ico .moto{width:34px;height:24px}
-.bf-count{position:absolute;top:-6px;right:-8px;min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:var(--dough);color:var(--coffee);font-weight:800;font-size:.85rem;display:grid;place-items:center;box-shadow:0 0 0 2px var(--coffee)}
+.basket-fab:active{transform:scale(.94)}
+.bf-ico{position:relative;display:grid;place-items:center;width:50px;height:50px;border-radius:50%;background:var(--coffee);color:var(--red);box-shadow:0 0 0 2px var(--red)}
+.bf-ico .moto{width:30px;height:21px}
+.bf-count{position:absolute;top:-5px;right:-6px;min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:var(--dough);color:var(--coffee);font-weight:800;font-size:.85rem;display:grid;place-items:center;box-shadow:0 0 0 2px var(--coffee)}
 .bf-txt{display:flex;flex-direction:column;line-height:1.15;text-align:left}
 .bf-txt b{font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:.95rem}
 .bf-txt small{font-size:.82rem;font-weight:600}
@@ -507,7 +520,7 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
 .basket-fab.bump .moto{animation:ride .55s ease-out}
 @keyframes bump{0%{transform:scale(1)}35%{transform:scale(1.14)}100%{transform:scale(1)}}
 @keyframes ride{0%{transform:translateX(0)}40%{transform:translateX(6px)}100%{transform:translateX(0)}}
-@media (max-width:640px){.basket-fab{padding:6px 14px 6px 6px}.bf-ico{width:46px;height:46px}.bf-txt b{font-size:.85rem}.bf-txt small{font-size:.76rem}}
+@media (max-width:640px){.bf-ico{width:46px;height:46px}}
 .fly{position:fixed;z-index:120;border-radius:50%;pointer-events:none;object-fit:contain;filter:drop-shadow(0 8px 10px rgba(0,0,0,.3))}
 .toast{position:fixed;left:50%;bottom:96px;z-index:130;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--coffee);color:var(--dough);padding:12px 16px 12px 18px;border-radius:999px;display:flex;align-items:center;gap:14px;font-weight:600;box-shadow:0 0 0 2px var(--red);transition:.35s var(--ease);max-width:calc(100vw - 24px)}
 .toast.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
@@ -572,6 +585,51 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
 #add-btn{min-height:56px;font-size:1.05rem;padding-inline:1.6em}
 #add-btn .plus{font-size:1.3em;line-height:0}
 @media (max-width:980px){.quick-add{font-size:.82rem;min-height:36px}}
+
+
+/* ============ Repartidor en moto ============ */
+.rider{display:block;width:100%;height:100%;overflow:visible}
+.rider .r-shadow{fill:rgba(38,28,22,.22)}
+.rider .r-box{fill:var(--rb,#DCD7CB);stroke:var(--coffee);stroke-width:8}
+.rider .r-iso{fill:var(--red)}
+.rider .r-body{fill:var(--rs,#ABDBEC);stroke:var(--coffee);stroke-width:8;stroke-linejoin:round}
+.rider .r-seat{fill:var(--coffee)}
+.rider .r-fork,.rider .r-bar{fill:none;stroke:var(--coffee);stroke-width:12;stroke-linecap:round}
+.rider .r-light{fill:#FFE9A8;stroke:var(--coffee);stroke-width:6}
+.rider .r-wheel circle{fill:var(--coffee)}
+.rider .r-wheel path{stroke:var(--rs,#ABDBEC);stroke-width:6;stroke-linecap:round;fill:none;opacity:.8}
+.rider .r-wheel .r-hub{fill:var(--rb,#DCD7CB)}
+.rider .r-puffs circle{fill:rgba(255,255,255,.75);opacity:0}
+.rider .rig{color:var(--coffee)}
+.rider .r-guy,.rider .r-arm-wave,.rider .r-torso{color:var(--coffee);fill:currentColor}
+.rider .r-limb{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
+.rider .r-stand{color:var(--coffee);fill:currentColor}
+.rider .r-pb{fill:#E9C98F;stroke:var(--coffee);stroke-width:5;stroke-linejoin:round}
+.rider .r-fist,.rider .r-foot{fill:currentColor}
+.rider .r-tilt{transform-box:view-box;transform-origin:200px 424px;transition:transform .45s cubic-bezier(.3,1.7,.45,1)}
+.rider .r-lean{transform-box:view-box;transform-origin:330px 282px;transition:transform .45s cubic-bezier(.3,1.7,.45,1)}
+.rider.braking .r-tilt{transform:rotate(-3.5deg);transition-duration:.3s;transition-timing-function:ease-out}
+.rider.braking .r-lean{transform:rotate(-6deg);transition-duration:.3s;transition-timing-function:ease-out}
+.rider.stopped .r-wheel,.rider.stopped .r-bob,.rider.stopped .r-puffs circle{animation-play-state:paused}
+.rider .r-arm-hold{transition:opacity .12s}
+.rider .r-arm-wave{opacity:0;transition:opacity .12s}
+.rider.waving .r-arm-hold{opacity:0}
+.rider.waving .r-arm-wave{opacity:1}
+.rider.waving .r-wv{animation:rideWave 1.8s ease-in-out}
+@keyframes rideWave{0%{transform:rotate(6deg)}12%{transform:rotate(-12deg)}28%{transform:rotate(8deg)}44%{transform:rotate(-12deg)}60%{transform:rotate(8deg)}76%{transform:rotate(-8deg)}100%{transform:rotate(6deg)}}
+.r-wheel{animation:spin .45s linear infinite}
+.r-bob{animation:rbob .32s ease-in-out infinite alternate}
+.r-puffs circle{animation:rpuff 1s ease-out infinite}
+.r-puffs circle:nth-child(2){animation-delay:.33s}.r-puffs circle:nth-child(3){animation-delay:.66s}
+@keyframes spin{to{transform:rotate(-360deg)}}
+@keyframes rbob{from{transform:translateY(0)}to{transform:translateY(-5px)}}
+@keyframes rpuff{0%{opacity:.8;transform:translate(0,0) scale(.5)}100%{opacity:0;transform:translate(46px,-22px) scale(1.8)}}
+.ride-el{position:absolute;inset:0;will-change:transform}
+.walker{width:clamp(190px,22vw,300px)!important;top:auto!important;bottom:4px}
+.walk-band{height:clamp(200px,24vw,290px)}
+.ticker{inset:auto 0 auto 0;top:16px}
+.order-rider{width:clamp(200px,24vw,300px);aspect-ratio:640/440;margin-top:24px}
+.done-rider{display:block;width:190px;aspect-ratio:640/440;margin:0 auto 4px}
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
 </style>
@@ -652,17 +710,23 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
   <div class="wrap philo-head">
     <h2 class="display" id="t-filo">Aquí la masa manda</h2>
     <div class="philo-statement">
-      <p>Fuego y libertad. La tradición nos inspira, no nos encierra: aquí la masa se respeta, se toca y se deja vivir.</p>
-      <p class="sign">Así sabe Crosta.</p>
+      <p>En Crosta trabajamos con fuego y con libertad. La tradición nos inspira, no nos encierra: aquí la masa se respeta, se toca y se deja vivir.</p>
+      <p>Una pizza honesta, directa, hecha para disfrutarse sin complicarse.</p>
+      <p class="sign">Así somos. Así sabe Crosta.</p>
     </div>
   </div>
   <div class="wrap philo-body">
     <figure class="philo-photo">
       <img src="img/harina-800.webp" srcset="img/harina-800.webp 800w, img/harina-1600.webp 1600w" sizes="(min-width: 860px) 40vw, 100vw" width="609" height="800" loading="lazy" alt="Manos tatuadas sacuden la harina sobre un bollo de masa; el polvo queda suspendido en la luz.">
     </figure>
+    <dl class="values">
+      <div class="value"><dt>Honest craft</dt><dd>Sin atajos. De la fermentación al último detalle, cada paso tiene intención.</dd></div>
+      <div class="value"><dt>Urban warmth</dt><dd>Un refugio en la ciudad: diseño, música y comida, con carácter y sin pretensiones.</dd></div>
+      <div class="value"><dt>Perfect mix</dt><dd>Inspiración italiana, corazón guatemalteco.</dd></div>
+      <div class="value"><dt>Quiet confidence</dt><dd>Coherencia y detalle. No necesitamos gritar para ser escuchados.</dd></div>
+    </dl>
     <div class="philo-quote">
-      <span class="m rig-slot" data-rig="m-cross" aria-hidden="true"></span>
-      <p>No necesitamos gritar para ser escuchados</p>
+      <div class="pq-track"><span class="m pq-guy" aria-hidden="true"></span><p>No necesitamos gritar para ser escuchados</p></div>
     </div>
   </div>
 </section>
@@ -674,7 +738,7 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
       <h2 class="display rule-title" id="t-menu"><span>Nuestras pizzas</span></h2>
       <p class="menu-intro">Cada una de nuestras creaciones está hecha para disfrutarse sin complicaciones. Por eso nuestro menú está pensado para ti y con qué acompañarlas.</p>
       <p class="display menu-kicker">¡Disfruta sin pensar!</p>
-      <span class="pending">Nombres, descripciones y precios por confirmar</span>
+      <span class="pending">Precios por confirmar</span>
     </header>
 
     <ul class="menu-list" role="tablist" aria-label="Pizzas" id="menu-list"></ul>
@@ -689,12 +753,11 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
         </div>
       </div>
       <div class="stage-info" id="menu-stage" role="tabpanel" tabindex="-1">
-        <span class="pending">Nombre provisional</span>
         <h3 class="display stage-name" id="stage-name"></h3>
         <p class="stage-bundle">Bebida bundle</p>
         <p class="stage-desc" id="stage-desc"></p>
-        <h4>Ingredientes que se ven en la foto</h4>
-        <ul class="ing" id="stage-ing"></ul>
+        <h4>Ingredientes</h4>
+        <p class="ing-text" id="stage-ing"></p>
         <p class="stage-note" id="stage-note"></p>
           <a class="stage-link" id="stage-link" href="#">Ver la ficha completa de esta pizza</a>
         <div class="buy">
@@ -775,7 +838,7 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
         <li><b>Revisa</b><span>Todo lo que agregas aparece en tu canasta, con la moto de delivery.</span></li>
         <li><b>Envía</b><span>Completa tus datos y envía el pedido. Te confirmamos por WhatsApp.</span></li>
       </ol>
-      <div class="order-mascot" id="order-walker" aria-hidden="true"></div>
+      <div class="order-rider" data-rider aria-hidden="true"></div>
     </div>
 
     <form class="cart" id="cart" novalidate aria-labelledby="t-cart">
@@ -866,7 +929,7 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
 
 <button type="button" class="basket-fab" id="basket-fab" data-open-basket aria-label="Abrir tu pedido">
   <span class="bf-ico"><svg class="moto" viewBox="0 0 48 32" aria-hidden="true"><rect x="2" y="7" width="14" height="11" rx="2"/><path d="M6 12h6"/><circle cx="10" cy="25" r="5"/><circle cx="38" cy="25" r="5"/><path d="M15 25h13l6-10h-5"/><path d="M29 15l-3-8h-5"/><path d="M34 15l4 10"/><path d="M8 18v2h10"/></svg><span class="bf-count" data-count hidden>0</span></span>
-  <span class="bf-txt"><b>Tu pedido</b><small id="bf-sub">Agrega pizzas del menú</small></span>
+  <span class="sr-only" id="bf-sub">Agrega pizzas del menú</span>
 </button>
 
 <div class="drawer" id="drawer" hidden>
@@ -896,7 +959,7 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
 
 <div class="done" id="done" hidden>
   <div class="done-card" role="dialog" aria-modal="true" aria-labelledby="t-done" tabindex="-1">
-    <span class="m rig-slot" data-rig="m-thumb" aria-hidden="true"></span>
+    <span class="done-rider" data-rider aria-hidden="true"></span>
     <h2 id="t-done" class="display">¡Pedido enviado!</h2>
     <p class="done-id">Pedido <b id="done-id"></b></p>
     <ul class="done-list" id="done-list"></ul>
@@ -941,7 +1004,10 @@ var RIG = {
               limbFx:'<g class="smoke wisp"><circle class="fx" cx="6" cy="138" r="5"/><circle class="fx" cx="6" cy="138" r="4"/><circle class="fx" cx="6" cy="138" r="5"/></g>',
               fx:'<g class="smoke puff"><circle class="fx" cx="92" cy="150" r="9"/><circle class="fx" cx="96" cy="146" r="7"/><circle class="fx" cx="90" cy="154" r="8"/></g>',
               lids:[[97,75,40,35],[140,75,45,35]]},
-  'm-pizza': {mask:'bm-pizza', fx:'<circle class="crumb" cx="70" cy="262" r="5"/><circle class="crumb" cx="86" cy="270" r="4"/><circle class="crumb" cx="58" cy="268" r="3.5"/>', lids:[[140,87,48,39],[190,87,50,39]]},
+  'm-pizza': {limb:{big:[[-16,120],[117,120],[117,147],[188,155],[188,200],[156,206],[156,264],[96,268],[64,274],[-16,274]], small:[[-16,124],[114,124],[114,150],[184,158],[184,196],[152,202],[152,260],[96,264],[62,270],[-16,270]], pivot:[40,256], r:26},
+              patch:'<path class="patch" d="M118 148 L192 148 L192 215 L140 215 L136 200 L116 196 Z"/>', limbMask:'bm-pizza',
+              limbUnder:'<path class="cheese" d="M10 150 L22 147 L34 152 L52 153 L76 156 L88 158 L117 159 L144 163 L166 170 L160 173 L138 177 L108 185 L80 190 L55 184 L30 175 L14 165 Z"/><path class="cheese" d="M30 178 L150 176 L150 258 L95 258 L60 232 L35 215 Z"/>',
+              fx:'<circle class="crumb" cx="150" cy="196" r="5"/><circle class="crumb" cx="164" cy="200" r="4"/><circle class="crumb" cx="138" cy="202" r="3.5"/>', lids:[[140,87,48,39],[190,87,50,39]]},
   'm-thumb': {fx:'<path class="spark" d="M112 170 l6 16 16 6 -16 6 -6 16 -6 -16 -16 -6 16 -6z"/>', lids:[[82,77,42,35],[129,77,44,35]]},
   'm-walk-a': {}, 'm-walk-b': {}
 };
@@ -955,7 +1021,7 @@ var RIG = {
     d += '<clipPath id="cpc-' + k + '"><circle cx="' + L.pivot[0] + '" cy="' + L.pivot[1] + '" r="' + (L.r || 30) + '"/></clipPath>';
   });
   d += '<mask id="bm-pizza" maskUnits="userSpaceOnUse" x="-100" y="-100" width="700" height="700"><rect x="-100" y="-100" width="700" height="700" fill="#fff"/>'
-     + '<circle class="bite b1" cx="24" cy="140" r="21" fill="#000"/><circle class="bite b2" cx="60" cy="139" r="20" fill="#000"/><circle class="bite b3" cx="96" cy="142" r="19" fill="#000"/></mask>';
+     + '<circle class="bite b1" cx="184" cy="168" r="15" fill="#000"/><circle class="bite b2" cx="168" cy="166" r="17" fill="#000"/><circle class="bite b3" cx="151" cy="168" r="19" fill="#000"/></mask>';
   var host = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   host.setAttribute('width', '0'); host.setAttribute('height', '0'); host.setAttribute('aria-hidden', 'true');
   host.style.position = 'absolute';
@@ -966,8 +1032,8 @@ function rig(pose){
   var R = RIG[pose] || {}, inner = '';
   if (R.limb) {
     inner = '<use href="#' + pose + '" clip-path="url(#cpb-' + pose + ')"/>'
-      + '<use href="#' + pose + '" clip-path="url(#cpc-' + pose + ')"/>'
-      + '<g class="limb" style="transform-origin:' + R.limb.pivot[0] + 'px ' + R.limb.pivot[1] + 'px"><use href="#' + pose + '" clip-path="url(#cpa-' + pose + ')"/>' + (R.limbFx || '') + '</g>';
+      + '<use href="#' + pose + '" clip-path="url(#cpc-' + pose + ')"/>' + (R.patch || '')
+      + '<g class="limb" style="transform-origin:' + R.limb.pivot[0] + 'px ' + R.limb.pivot[1] + 'px"><g' + (R.limbMask ? ' mask="url(#' + R.limbMask + ')"' : '') + '>' + (R.limbUnder || '') + '<use href="#' + pose + '" clip-path="url(#cpa-' + pose + ')"/></g>' + (R.limbFx || '') + '</g>';
   } else if (R.mask) {
     inner = '<use href="#' + pose + '" mask="url(#' + R.mask + ')"/>';
   } else {
@@ -1022,7 +1088,7 @@ function Walker(host, opts){
   this.el = host.lastElementChild; this.svg = $('svg', this.el);
   this.legL = $('.legL', this.svg); this.legR = $('.legR', this.svg); this.torso = $('.torso', this.svg); this.body = $('.wbody', this.svg);
   this.G = LEGS[this.pose];
-  this.x = this.o.x || 0; this.dir = this.o.dir || -1; this.A = this.o.amp || 17; this.stepDur = this.o.step || 0.46;
+  this.x = this.o.x || 0; this.dir = this.o.dir || -1; this.A = this.o.amp || 20; this.stepDur = this.o.step || 0.3;
   this.phase = this.o.phase || 0; this.state = this.o.inPlace ? 'walk' : 'idle'; this.t = 0; this.blend = this.o.inPlace ? 1 : 0;
   walkers.push(this);
   this.render();
@@ -1077,43 +1143,145 @@ function tick(t){
 }
 requestAnimationFrame(tick);
 
+
+/* ====== Repartidor: el personaje en moto de delivery ====== */
+(function(){
+  var P = function(a){ return 'M ' + a.map(function(p){ return p[0] + ' ' + p[1]; }).join(' L ') + ' Z'; };
+  var keep = [[105,-10],[460,-10],[460,195],[352,205],[350,343],[102,343],[104,272],[110,215],[131,190],[105,175]];
+  var arm  = [[-20,-10],[105,-10],[105,175],[131,190],[110,215],[104,272],[102,343],[-20,343]];
+  var host = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  host.setAttribute('width', '0'); host.setAttribute('height', '0'); host.setAttribute('aria-hidden', 'true'); host.style.position = 'absolute';
+  var stand = [[105,-10],[460,-10],[460,195],[352,205],[350,360],[470,360],[470,440],[-20,440],[-20,360],[102,360],[102,343],[104,272],[110,215],[131,190],[105,175]];
+  host.innerHTML = '<defs><clipPath id="rd-torso"><path d="' + P(keep) + '"/></clipPath><clipPath id="rd-arm"><path d="' + P(arm) + '"/></clipPath><clipPath id="rd-stand"><path d="' + P(stand) + '"/></clipPath></defs>';
+  document.body.insertBefore(host, document.body.firstChild);
+})();
+function rider(pose){
+  pose = pose || 'm-wave';
+  var who = rig(pose).replace('<svg ', '<svg x="196" y="18" width="292" height="282" ');
+  return '<svg class="rider" viewBox="0 0 640 440" aria-hidden="true">'
+    + '<ellipse class="r-shadow" cx="330" cy="424" rx="250" ry="12"/>'
+    + '<g class="r-puffs"><circle cx="600" cy="362" r="12"/><circle cx="600" cy="362" r="9"/><circle cx="600" cy="362" r="11"/></g>'
+    + '<g class="r-tilt"><g class="r-bob">'
+    +   '<rect class="r-box" x="418" y="132" width="168" height="138" rx="16"/>'
+    +   '<use href="#iso" x="478" y="150" width="48" height="80" class="r-iso"/>'
+    +   '<g class="r-who">' + who + '</g>'
+    +   '<path class="r-body" d="M560 290 Q566 360 498 364 L262 364 Q226 364 210 332 L176 252 L206 240 L246 314 L318 314 L330 288 Z"/>'
+    +   '<path class="r-seat" d="M318 290 Q330 266 380 268 L500 268 Q530 270 532 292 Z"/>'
+    +   '<path class="r-fork" d="M190 246 L160 158"/>'
+    +   '<path class="r-bar" d="M128 160 L196 150"/>'
+    +   '<circle class="r-light" cx="186" cy="236" r="15"/>'
+    + '</g></g>'
+    + '<g class="r-wheel" style="transform-origin:200px 372px"><circle cx="200" cy="372" r="52"/><path d="M200 330 V414 M158 372 H242 M170 342 L230 402 M230 342 L170 402"/><circle class="r-hub" cx="200" cy="372" r="15"/></g>'
+    + '<g class="r-wheel" style="transform-origin:494px 372px"><circle cx="494" cy="372" r="52"/><path d="M494 330 V414 M452 372 H536 M464 342 L524 402 M524 342 L464 402"/><circle class="r-hub" cx="494" cy="372" r="15"/></g>'
+    + '</svg>';
+}
+/* frena, se detiene, saluda y arranca otra vez */
+function riderWave(svg, done){
+  svg.classList.add('braking');
+  setTimeout(function(){ svg.classList.remove('braking'); svg.classList.add('stopped', 'waving'); }, 420);
+  setTimeout(function(){ svg.classList.remove('waving'); }, 2300);
+  setTimeout(function(){ svg.classList.remove('stopped'); if (done) done(); }, 2500);
+}
+$$('[data-rider]').forEach(function(el){ el.innerHTML = rider('m-wave'); });
+
 window.__crosta = {Walker: Walker, rig: rig, rigWalk: rigWalk};
-/* Banda roja: el de la pizza cruza caminando, se detiene un momento y sigue */
+/* Filosofía: el personaje entra empujando la frase */
+(function(){
+  var box = $('.philo-quote'), track = $('.pq-track'), guy = $('.pq-guy');
+  var w = new Walker(guy, {pose: 'm-thumb', inPlace: true, dir: 1, step: 0.26, amp: 22});
+  w.el.style.transform = 'scaleX(-1) rotate(-9deg)';
+  var origRender = w.render;
+  w.render = function(){ origRender.call(this); this.el.style.transform = 'scaleX(-1) rotate(' + (-9 * this.blend).toFixed(2) + 'deg)'; };
+  var x = 0, run = false, last = 0, v0 = 300;
+  function place(){ x = -(box.getBoundingClientRect().left + track.offsetWidth + 30); track.style.transform = 'translate3d(' + x + 'px,0,0)'; }
+  place();
+  function frame(t){
+    var dt = last ? Math.min(0.05, (t - last) / 1000) : 0; last = t;
+    x = Math.min(0, x + Math.max(w.speed(), v0) * dt);
+    track.style.transform = 'translate3d(' + x.toFixed(1) + 'px,0,0)';
+    if (x < 0) return requestAnimationFrame(frame);
+    track.classList.remove('pushing'); track.classList.add('landed');
+    w.state = 'stop';
+    setTimeout(function(){
+      w.el.style.display = 'none';
+      guy.insertAdjacentHTML('beforeend', '<span class="act">' + rig('m-thumb') + '</span>');
+    }, 450);
+  }
+  new IntersectionObserver(function(en, obs){
+    if (!en[0].isIntersecting || run) return;
+    run = true; obs.disconnect(); place(); v0 = -x / (innerWidth > 860 ? 2.8 : 2.2);
+    w.stepDur = Math.max(0.15, w.stepDur * w.speed() / v0); track.classList.add('pushing'); requestAnimationFrame(frame);
+  }, {threshold: .6}).observe(box);
+})();
+/* Banda roja: el repartidor cruza en moto */
 (function(){
   var host = $('#band-walker'), band = $('.walk-band');
-  var w = new Walker(host, {pose: 'm-pizza', step: 0.5});
-  var dir = 1;
-  function run(){
-    var W = band.clientWidth, s = host.offsetWidth;
-    var from = dir > 0 ? -s - 20 : W + 20, to = dir > 0 ? W + 20 : -s - 20;
-    w.go(from, to, { pauseAt: W * (0.3 + Math.random() * 0.4), onDone: function(){ dir = -dir; setTimeout(run, 1400); } });
+  host.innerHTML = '<div class="ride-el">' + rider('m-wave') + '</div>';
+  var T = 0, this_dec = 0, el = host.firstChild, svg = $('svg', el), x = -300, dir = 1, last = 0, wait = 0, v = 0, mode = 'go', braked = false;
+  var who = $('.r-who', svg), bob = $('.r-bob', svg), whoNext = who.nextSibling;
+  var ease = function(u){ u = Math.max(0, Math.min(1, u)); return u < .5 ? 2 * u * u : 1 - Math.pow(-2 * u + 2, 2) / 2; };
+  var seg = function(t, a, b){ return ease((t - a) / (b - a)); };
+  function deliver(t){
+    /* se baja de un salto (0–0.7), saluda, y se vuelve a subir (2.9–3.6) */
+    var off = seg(t, 0, .7) * (1 - seg(t, 2.9, 3.6));
+    var arc = t < .7 ? Math.sin(Math.PI * t / .7) : (t > 2.9 && t < 3.6 ? Math.sin(Math.PI * (t - 2.9) / .7) : 0);
+    var front = t > 0 && t < 3.6;
+    if (front && who.parentNode === bob && who.nextSibling) bob.appendChild(who);
+    if (!front && who.nextSibling !== whoNext) bob.insertBefore(who, whoNext);
+    var hop = (t > .9 && t < 2.8) ? -Math.abs(Math.sin((t - .9) * Math.PI * 1.6)) * 10 : 0;
+    who.setAttribute('transform', 'translate(' + (-345 * off).toFixed(1) + ' ' + (124 * off - 70 * arc + hop).toFixed(1) + ')');
   }
-  run();
+  deliver(99);
+  function frame(t){
+    var dt = last ? Math.min(0.05, (t - last) / 1000) : 0; last = t;
+    var W = band.clientWidth, w = host.offsetWidth, V = Math.max(240, W * 0.22), stopX = (W - w) / 2 - dir * w * 0.18;
+    if (wait > 0) { wait -= dt; }
+    else if (mode === 'go') {
+      v = Math.min(V, v + V / 0.7 * dt);
+      var dist = (stopX - x) * dir;
+      if (!braked && dist > 0 && dist < V * 0.42) { mode = 'brake'; braked = true; svg.classList.add('braking'); this_dec = v * v / (2 * dist); }
+    } else if (mode === 'brake') {
+      v = Math.max(0, v - this_dec * dt);
+      if (v < 8) { v = 0; mode = 'deliver'; T = 0; svg.classList.remove('braking'); svg.classList.add('stopped'); }
+    } else if (mode === 'deliver') {
+      T += dt; deliver(T);
+      if (T > 3.9) { deliver(99); svg.classList.remove('stopped'); mode = 'go'; }
+    }
+    if (wait <= 0) x += dir * v * dt;
+    if (dir > 0 && x > W + 40) { dir = -1; wait = 1.2; v = 0; braked = false; }
+    if (dir < 0 && x < -w - 40) { dir = 1; wait = 1.2; v = 0; braked = false; }
+    el.style.transform = 'translate3d(' + x.toFixed(1) + 'px,0,0) scaleX(' + (dir > 0 ? -1 : 1) + ')';
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
 })();
 /* Pedidos: camina en su lugar */
-if ($('#order-walker')) { var ow = new Walker($('#order-walker'), {pose: 'm-thumb', inPlace: true, step: 0.5}); }
 
-/* ====== Datos del menú (provisionales: confirmar con cocina) ====== */
+function listaIng(a){
+  var l = a.map(function(x, i){ return i ? x.charAt(0).toLowerCase() + x.slice(1) : x; });
+  return (l.length > 1 ? l.slice(0, -1).join(', ') + ' y ' + l[l.length - 1] : l[0]) + '.';
+}
+/* ====== Datos del menú  ====== */
 var PIZZAS = [
-  {id:'p1', slug:'tomate-y-albahaca', name:'Tomate y albahaca', short:'Tomate, mozzarella, albahaca',
-   desc:'La base de todo. Salsa de tomate, mozzarella en trozos y albahaca fresca, con queso curado rallado sobre un borde alto y manchado por el horno.',
-   ing:['Salsa de tomate','Mozzarella','Albahaca fresca','Queso curado rallado','Pimienta negra'],
-   note:'Ingredientes identificados a partir de la fotografía.',
+  {id:'p1', slug:'bella-roja', name:'Bella Roja', short:'Tomate, mozzarella, albahaca',
+   desc:'La de siempre, hecha con calma: roja, simple y con la orilla alta.',
+   ing:['Salsa natural de tomate','Mozzarella','Albahaca fresca','Queso ibérico rallado en la orilla'],
+   note:'',
    views:{cenital:'p1-cut', perfil:'p1-perfil', detalle:'p1-detalle'}},
-  {id:'p2', slug:'blanca-con-jamon-curado', name:'Blanca con jamón curado', short:'Base blanca, jamón curado, brotes',
-   desc:'Sin tomate. Una base blanca y cremosa con pliegues de jamón curado, microbrotes y queso rallado.',
-   ing:['Base blanca','Jamón curado','Microbrotes','Queso curado rallado'],
-   note:'La foto muestra láminas oscuras y rodajas verdes que la cocina debe confirmar antes de publicarlas.',
+  {id:'p2', slug:'noche-blanca', name:'Noche Blanca', short:'Salsa blanca con trufa, jamón serrano',
+   desc:'Sin tomate. Cremosa, con el aroma de la trufa y el punto salado del serrano.',
+   ing:['Salsa blanca con trufa','Jamón serrano','Alcaparrones','Brotes de cilantro','Queso rallado en la orilla'],
+   note:'',
    views:{cenital:'p2-cut', perfil:'p2-perfil', detalle:'p2-detalle'}},
-  {id:'p3', slug:'salami-y-alcaparras', name:'Salami y alcaparras', short:'Tomate, salami, alcaparras',
-   desc:'Láminas finas de embutido curado sobre tomate, alcaparras, microbrotes y una lluvia de queso rallado.',
-   ing:['Salsa de tomate','Embutido curado en láminas','Alcaparras','Microbrotes','Queso curado rallado'],
-   note:'Confirmar el tipo exacto de embutido.',
+  {id:'p3', slug:'rubi', name:'Rubí', short:'Salsa roja, salami, alcaparras',
+   desc:'Roja y picante, con el color y la frescura de los brotes encima.',
+   ing:['Salsa roja','Salami','Alcaparras','Brotes de cilantro','Brotes de remolacha'],
+   note:'',
    views:{cenital:'p3-cut', perfil:'p3-perfil', detalle:'p3-detalle'}},
-  {id:'p4', slug:'aceitunas-verdes', name:'Aceitunas verdes', short:'Tomate, mozzarella, aceitunas',
-   desc:'Tomate, mozzarella y aceitunas verdes enteras, con un nido de microbrotes al centro.',
-   ing:['Salsa de tomate','Mozzarella','Aceitunas verdes','Microbrotes','Queso curado rallado'],
-   note:'Las tiras rojas sobre la pizza están por identificar.',
+  {id:'p4', slug:'mallorquina', name:'Mallorquina', short:'Sobrasada, aceitunas, mozzarella',
+   desc:'Con sobrasada, un guiño a Mallorca, y aceitunas verdes.',
+   ing:['Sobrasada','Aceitunas verdes','Mozzarella','Queso ibérico rallado en la orilla'],
+   note:'',
    views:{cenital:'p4-cut'}}
 ];
 var byId = {}; PIZZAS.forEach(function(p){ byId[p.id] = p; });
@@ -1212,7 +1380,7 @@ function render(){
   });
   $('#stage-name').textContent = active.name;
   $('#stage-desc').textContent = active.desc;
-  $('#stage-ing').innerHTML = active.ing.map(function(x){ return '<li>' + x + '</li>'; }).join('');
+  $('#stage-ing').textContent = listaIng(active.ing);
   $('#stage-note').textContent = active.note;
   $('#stage-link').href = 'pizza/' + active.slug + '/';
   $('#menu-stage').setAttribute('aria-labelledby', 'tab-' + active.id);
@@ -1256,7 +1424,8 @@ function renderCart(){
   $('#cart-empty').hidden = has; $('#checkout').hidden = !has; $('#send-btn').hidden = !has;
   $('#dr-empty').hidden = has; $('#dr-foot').hidden = !has;
   $('#cart-total').textContent = plural(n); $('#dr-total').textContent = plural(n) + ' en tu canasta';
-  $('#bf-sub').textContent = has ? plural(n) + ' · ver y enviar' : 'Agrega pizzas del menú';
+  $('#bf-sub').textContent = has ? plural(n) + ' en tu pedido' : 'Agrega pizzas del menú';
+  fab.setAttribute('aria-label', has ? 'Tu pedido: ' + plural(n) : 'Tu pedido');
   fab.classList.toggle('has', has);
   $$('[data-count]').forEach(function(el){ el.textContent = n; el.hidden = !has; });
 }
@@ -1459,10 +1628,12 @@ layoutProcess();
 /* ====== Escena del pie: llegan caminando y cada uno hace lo suyo ====== */
 var scene = $('#scene');
 var CAST = ['m-wave','m-pizza','m-cross','m-wine','m-smoke','m-stool','m-thumb'];
+var PALETTE = ['#FF4027','#ABDBEC','#B18023','#DCD7CB','#FF4027','#ABDBEC','#B18023'];
 var WALKS_AS = {'m-wave':'m-wave','m-pizza':'m-pizza','m-smoke':'m-smoke','m-thumb':'m-thumb','m-cross':'m-thumb','m-wine':'m-thumb','m-stool':'m-thumb'};
 var actors = CAST.map(function(pose, i){
   var a = document.createElement('div');
   a.className = 'actor'; a.style.setProperty('--slot', i);
+  a.style.color = PALETTE[i % PALETTE.length];
   a.innerHTML = '<div class="act">' + rig(pose) + '</div>';
   scene.appendChild(a);
   return a;
@@ -1473,12 +1644,12 @@ function enter(){
   var W = scene.clientWidth;
   /* entran desde la derecha, en fila, cada uno con su paso; el primero en llegar es el de la izquierda */
   actors.forEach(function(a, i){
-    var w = new Walker(a, {pose: WALKS_AS[CAST[i]], step: 0.42 + (i % 3) * 0.04, phase: i * 0.37});
+    var w = new Walker(a, {pose: WALKS_AS[CAST[i]], step: 0.28 + (i % 3) * 0.03, phase: i * 0.37});
     var from = W - a.offsetLeft + 30 + i * a.offsetWidth * 0.35;
     w.x = from; w.dir = -1; w.render();
     setTimeout(function(){ w.go(from, 0, { onDone: function(){ a.classList.add('arrived'); } }); }, i * 220);
   });
-  var rw = new Walker(roamHost, {pose: 'm-smoke', step: 0.55}), dir = 1;
+  var rw = new Walker(roamHost, {pose: 'm-smoke', step: 0.34}), dir = 1;
   rw.x = -400; rw.render();
   function roam(){
     var Wn = scene.clientWidth, s = roamHost.offsetWidth;
