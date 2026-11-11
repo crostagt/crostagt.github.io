@@ -833,8 +833,8 @@ fieldset.field{border:0;margin:0 0 16px;padding:0}
 
 
 <audio id="bg-audio" preload="auto" loop>
-  <source src="audio/coltrane.webm" type="audio/webm; codecs=opus">
   <source src="audio/coltrane.m4a" type="audio/mp4">
+  <source src="audio/coltrane.webm" type="audio/webm; codecs=opus">
 </audio>
 
 <button class="buddy" id="buddy" type="button" aria-pressed="false" aria-label="Poner música">
@@ -1290,12 +1290,19 @@ $('#lb-stage').addEventListener('click', function(e){ if (e.target === e.current
     say('¡Hola! ¿Quieres escuchar música? Apáchame.', 5200);
     setTimeout(function(){ buddy.classList.remove('hello'); showBuddy(currentPose); }, 5200);
   }
+  /* En celular el permiso para sonar llega al levantar el dedo (touchend/click), no al tocar. */
+  var GESTURES = ['touchend', 'click', 'keydown'];
+  function unbind(){ GESTURES.forEach(function(t){ removeEventListener(t, firstTouch, true); }); }
   function firstTouch(e){
-    if (buddy.contains(e.target)) return;
-    removeEventListener('pointerdown', firstTouch, true); removeEventListener('keydown', firstTouch, true);
-    if (!dismissed && !buddy.classList.contains('is-playing')) play();
+    if (buddy.contains(e.target)) { unbind(); return; }
+    if (dismissed || buddy.classList.contains('is-playing')) { unbind(); return; }
+    if (!available) { unbind(); return; }
+    audio.volume = 0;
+    var pr = audio.play();
+    if (pr && pr.then) pr.then(function(){ unbind(); setUI(true); fadeTo(VOL, 1600); }, function(){ /* se reintenta en el siguiente toque */ });
+    else { unbind(); setUI(true); fadeTo(VOL, 1600); }
   }
-  addEventListener('pointerdown', firstTouch, true); addEventListener('keydown', firstTouch, true);
+  GESTURES.forEach(function(t){ addEventListener(t, firstTouch, true); });
 })();
 
 /* ====== Escena del pie: llegan caminando y cada uno hace lo suyo ====== */
